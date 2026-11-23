@@ -58,7 +58,7 @@ section{padding:96px 0}
 /* nav */
 nav.main{position:sticky;top:0;z-index:40;background:rgba(246,245,242,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 nav.main .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
-.brandlogo{height:38px;width:auto}
+.wm{display:flex;align-items:center;gap:12px}.wm img{width:44px;height:44px;border-radius:11px}.wm span{display:flex;flex-direction:column;font-size:13px;font-weight:500;line-height:1.15}.wm b{font-size:17px;font-weight:800}
 .links{display:flex;gap:4px;font-size:15px;font-weight:600}
 .links a{padding:9px 16px;border-radius:999px}
 .links a:hover,.links a.on{background:var(--w)}
@@ -66,7 +66,7 @@ nav.main .wrap{display:flex;align-items:center;justify-content:space-between;gap
 /* hero */
 .hero{height:min(78vh,640px);min-height:460px}
 .hero .ph{position:absolute;inset:0}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.55))}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.55) 45%,rgba(11,11,11,.05) 75%)}
 .hero .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:56px;color:var(--w)}
 .hero h1{font-size:76px;line-height:1;font-weight:700;letter-spacing:-.02em}
 .hero h1 em{font-style:normal;font-weight:300;display:block}
@@ -240,7 +240,7 @@ footer{margin:0 24px 24px;border-radius:24px;background:var(--k);color:var(--w);
 </div></div>
 
 <nav class="main" aria-label="Main"><div class="wrap">
-<a href="#home" aria-label="CSS Media Centre"><img class="brandlogo" id="brandLogo" alt="Congo Supply &amp; All Services"></a>
+<a href="#home" aria-label="CSS Media Centre"><span class="wm"><img src="mark.png" alt=""><span><b>Congo Supply</b>&amp; All Services</span></span></a>
 <div class="links"><a href="#albums" data-t="nAlbums">Albums</a><a href="#projects" data-t="nProjects">Projects</a><a href="#videos" data-t="nVideos">Videos</a><a href="#brand" data-t="nBrand">Brand kit</a><a href="#files" data-t="nFiles">Files</a></div>
 <div class="navr"><button class="btn btn-k" id="installBtn" aria-label="Install app" style="min-height:44px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg><span data-t="install">Install app</span></button></div>
 </div></nav>
@@ -361,7 +361,6 @@ function render(){
  document.querySelectorAll('[data-t]').forEach(e=>{const v=t(e.dataset.t);if(typeof v==='string')e.textContent=v;});
  $('q').placeholder=t('searchPh');
  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
- $('brandLogo').src=th(DATA.brand.families[0].items[0].png,600);
  $('heroPh').innerHTML=img(DATA.hero,2000,'CSS',true);
  $('checks').innerHTML=t('checks').map(c=>`<div><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>${esc(c)}</div>`).join('');
  const logos=DATA.brand.families.reduce((n,f)=>n+f.items.length,0);
