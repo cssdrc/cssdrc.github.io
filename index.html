@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS · Highlights</title>
+<meta name="description" content="Congo Supply &amp; All Services photo highlights">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414;
+  --muted:#8a8a8a;
+  --line:#e7e5e1;
+  --paper:#fbfaf8;
+  --white:#ffffff;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",Helvetica,Arial,sans-serif;
+  --gap:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+/* COVER */
+.cover{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;background:#000;color:#fff}
+.cover .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.06);transition:opacity 2.2s ease,transform 9s ease}
+.cover .slide.on{opacity:1;transform:scale(1)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.55) 100%)}
+.cover-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.42em;text-transform:uppercase;opacity:.9}
+.names{font-family:var(--serif);font-weight:300;font-size:clamp(46px,9vw,112px);line-height:1;letter-spacing:.06em;margin:22px 0 18px;text-transform:uppercase}
+.names .amp{font-style:italic;font-weight:300;text-transform:none;letter-spacing:0;margin:0 .18em}
+.rule{width:48px;height:1px;background:rgba(255,255,255,.75);margin:6px auto 22px}
+.cover-cta{display:inline-block;border:1px solid rgba(255,255,255,.8);padding:14px 34px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;transition:background .3s,color .3s}
+.cover-cta:hover{background:#fff;color:var(--ink)}
+.scroll-hint{position:absolute;left:50%;bottom:28px;z-index:2;transform:translateX(-50%);width:1px;height:46px;background:rgba(255,255,255,.5);overflow:hidden}
+.scroll-hint::after{content:"";position:absolute;left:0;top:-46px;width:1px;height:46px;background:#fff;animation:drop 2.2s infinite}
+@keyframes drop{to{top:46px}}
+
+/* HEADER */
+header.bar{position:sticky;top:0;z-index:20;background:rgba(251,250,248,.94);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+.brand{text-align:center;padding:18px 16px 10px}
+.brand .t{font-family:var(--serif);font-size:24px;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.brand .t i{font-weight:300;text-transform:none;letter-spacing:0;margin:0 .2em}
+.chapters{display:flex;justify-content:center;gap:0;padding:4px 16px 0}
+.chapters button{font-size:11px;letter-spacing:.3em;text-transform:uppercase;padding:10px 22px;color:var(--muted);position:relative;transition:color .25s}
+.chapters button+button::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line)}
+.chapters button.on{color:var(--ink)}
+.sets{display:flex;justify-content:center;flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding:6px 16px 14px}
+.sets::-webkit-scrollbar{display:none}
+.sets button{flex:0 0 auto;font-family:var(--serif);font-size:17px;letter-spacing:.04em;padding:6px 14px;color:var(--muted);border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.sets button:hover{color:var(--ink)}
+.sets button.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* SECTION HEAD */
+.intro{text-align:center;padding:64px 20px 36px}
+.intro .k{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--muted)}
+.intro h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,54px);letter-spacing:.04em;margin:14px 0 12px}
+.intro .count{font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.intro .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px}
+.intro .orn span{width:40px;height:1px;background:var(--line)}
+.intro .orn b{width:5px;height:5px;transform:rotate(45deg);border:1px solid var(--muted)}
+
+/* GRID */
+.grid{display:flex;gap:var(--gap);padding:0 var(--gap) 40px;max-width:1680px;margin:0 auto}
+.col{flex:1 1 0;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.tile{position:relative;background:#ecebe8;overflow:hidden;cursor:zoom-in;display:block}
+.tile img{display:block;width:100%;height:auto;opacity:0;transition:opacity .6s ease,transform .8s ease}
+.tile img.ok{opacity:1}
+.tile:hover img.ok{transform:scale(1.025)}
+.tile .ph{aspect-ratio:2/3}
+.tile.landscape .ph{aspect-ratio:3/2}
+.tile .ph+img{position:absolute;inset:0}
+.tile.loaded .ph{display:none}
+.tile.loaded img{position:static}
+.tile.dead{display:none}
+.sentinel{height:1px}
+.more{display:block;margin:0 auto 70px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--ink);padding:14px 34px;transition:background .3s,color .3s}
+.more:hover{background:var(--ink);color:#fff}
+.more[hidden]{display:none}
+
+footer{border-top:1px solid var(--line);text-align:center;padding:46px 20px 56px}
+footer .t{font-family:var(--serif);font-size:22px;letter-spacing:.18em;text-transform:uppercase}
+footer .t i{text-transform:none;letter-spacing:0;margin:0 .2em}
+footer p{margin-top:10px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.totop{margin-top:22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.97);display:none;color:#fff;user-select:none;-webkit-user-select:none}
+.lb.open{display:block}
+.lb-stage{position:absolute;inset:64px 72px 64px;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;opacity:0;transition:opacity .35s ease}
+.lb-stage img.ok{opacity:1}
+.lb-spin{position:absolute;width:28px;height:28px;border:1px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lb-top{position:absolute;top:0;left:0;right:0;height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 18px}
+.lb-count{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+.lb-title{font-family:var(--serif);font-size:18px;letter-spacing:.08em;text-align:center}
+.lb-actions{display:flex;justify-content:flex-end;gap:6px}
+.icon{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;opacity:.85;transition:opacity .2s,background .2s}
+.icon:hover{opacity:1;background:rgba(255,255,255,.08)}
+.icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.3}
+.lb-nav{position:absolute;top:50%;margin-top:-28px;width:56px;height:56px}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-nav svg{width:26px;height:26px}
+.lb-bottom{position:absolute;bottom:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:center}
+.lb-dl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;border:1px solid rgba(255,255,255,.6);padding:11px 26px;transition:background .25s,color .25s}
+.lb-dl:hover{background:#fff;color:#111}
+
+@media (max-width:760px){
+  :root{--gap:6px}
+  .brand{padding:14px 12px 6px}
+  .brand .t{font-size:19px}
+  .chapters button{padding:9px 14px;font-size:10px;letter-spacing:.24em}
+  .sets{justify-content:flex-start}
+  .sets button{font-size:16px;padding:6px 10px}
+  .intro{padding:44px 16px 26px}
+  .lb-stage{inset:58px 0 70px}
+  .lb-nav{display:none}
+  .lb-title{display:none}
+  .lb-top{grid-template-columns:1fr 1fr}
+}
+.chapters{display:none}.sets{display:none}.brand{padding-bottom:16px}
+</style>
+</head>
+<body>
+
+<section class="cover" id="top">
+  <div id="slides"></div>
+  <div class="cover-inner">
+    <div class="eyebrow">Congo Supply &amp; All Services</div>
+    <h1 class="names">CSS <span class="amp">Highlights</span></h1>
+    <div class="rule"></div>
+    <a class="cover-cta" href="#gallery" id="enter">View Gallery</a>
+  </div>
+  <div class="scroll-hint"></div>
+</section>
+
+<header class="bar" id="gallery">
+  <div class="brand"><div class="t">CSS<i>·</i>Highlights</div></div>
+  <nav class="chapters" id="chapters"></nav>
+  <nav class="sets" id="sets"></nav>
+</header>
+
+<main>
+  <div class="intro">
+    <div class="k" id="kChapter"></div>
+    <h2 id="hSet"></h2>
+    <div class="count" id="count"></div>
+    <div class="orn"><span></span><b></b><span></span></div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="sentinel" id="sentinel"></div>
+  <button class="more" id="more" hidden>Load more</button>
+</main>
+
+<footer>
+  <div class="t">Congo Supply<i>&amp;</i>All Services</div>
+  <p>Mining · Construction · Oil and Gas</p>
+  <button class="totop" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Back to top</button>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-count" id="lbCount"></div>
+    <div class="lb-title" id="lbTitle"></div>
+    <div class="lb-actions">
+      <button class="icon" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    </div>
+  </div>
+  <div class="lb-stage" id="lbStage"><div class="lb-spin" id="lbSpin"></div><img id="lbImg" alt=""></div>
+  <button class="icon lb-nav lb-prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+  <button class="icon lb-nav lb-next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+  <div class="lb-bottom"><a class="lb-dl" id="lbDl" href="#" target="_blank" rel="noopener">Download</a></div>
+</div>
+
+<script>
+const GALLERY = [{"key":"css","title":"Congo Supply & All Services","sets":[{"slug":"highlights","title":"Highlights","ids":["1MsgzI_SzwrMU48s_PgvQ0byws8mMPSVo","17FFvGeIVpl8zX_xCRNnzN5gLkt95xRuO","1JBaYxG2N0UTM4tHcF6lVnpYcQoun33zR","1oh4QuL-0UgB7soxcOwD9Uugp7MotoEc7","1x3mDLSifiE9_exGmDu2nI-rek-nWzYp8","1f5DT_3o9T7W_59X_dRdvVbuETDjEuLSg","17-qAbHrCHHW0KS_gQ4-nx8Ui2E0iUdT0","1gUsCj_T5TNmg8owbvBVTf_kU48Jz8m-0","1ctj2yDMydgeNiCdohITxsdy5Gll784Rn","1Vmu7EpKd0HOyVEqRg6Amc9RLVAWA5t4p","1T8SEyYXkXDNqx99MT1D-anBPwl4PkdGd","1Wubl4sU6j3I2kzg0ihrwFCk57lFFm7pI","1zG3D1MuYyzWTp41fRA954sGVaukd3ElX","1reBIcOiwfGQJWF9akEs8etDB_GbnTCMA","167oA5K7J1AFARrmf9tkVHgNC7d0PvCEJ","1GyQoIlTys6T0hY0ycVYMBJ4agmJCq6ce","16o4AchcAK57fEcTpfo7asY2lP3oyJbUI","1dO3alLRmLWHRpoFLcp8gL6lcJnhY0eRP","1wYNlEL0dS3s8tBrECyOj0edrYK_7yW3B","1QWBu9FGCa9U2uByTNqvePW10qNvqZ5X8","1GSZF3VaJrpXmBv6USb6AiOktJFXI6i0n","1bD6VcSeKUWgp699XzdCLQqvbuzjvrBvu","1G_Mcp_Ljrte_dQ1SGHNZPqYpyD53h60z","1sDT_ir0Jzey4DLqmfMEKbKAFfQbnCBz4","18OdkiCEKhQ48vqNtHOGqIAGWtoK5RysE","1olzbiLbzfSln9Gt6fpvxQJ1DdggUALUn","1yr4u9sGb4wMCFGab57VGiZFrayULFwVI","1E2-hL8xtea03WNp5JzrgtFrXzigT7ELt","1ICxzIbfPG5ZaokmaUOkV-hMTS5ipO7an","1UCIckW3d0gzBtfB8PMtKn3SebHPGav4q","1Q0rzeIk1YelIY-l_AEczkDR-k7wI1sZi","1wZ4TUWiKSRjMe2p-SFRHpMxY0AiNbR2R","1W43SURgyqc-H0H3yYxil3sDFkaOG1_Et","1Ojvfjtg_CSzjb8gLoPZyrZNMEWXKgaUT","1Ndcuvw1kh2wj-glbasj3PCOk6vsZq5sR","1af8mYhIErwGrpNbvMO1rDBz8A7kgbSJW","1MfVYNVWAN-CY1fna87ohXIohKisiJFdW","1cRtW3Oxt8vJfpydZ5CsQ0_f2kjSX6JLE","12toiWKlsEe7dec0fts_11x6cin124_gH","1UEoApjvPfhZ13h7bmnYCO0UHl-iXgEpE","1YqrGTHE24np9Rz8Sub9T5_zhZcqGjInr","16p-Tfc6r6LUDiatCo5qe2OyxhCSqrw67","1UXl5Yoa1C9bz5HKEJcHFLxFCeMBnDx7g","1Kd72TQ_MVu3oNuw6LbcO6XJKNe80Gavg","1SMaSlGvTnsXz7tzXxUyUt-gLURP3I6Hm","1muTIBkIiGwsooetpVwlqh1N1Sc-byZLJ","1qBrIUoPfUpiJwrcVCy_tvHHF_4PRzhB1","1tniSt2WN_r1pvizHfrtRO0tolTryo1oP","1CzlDjDd9AKZdVWTZhru5aWyU1OvFRSr7","1iBN3SqyBy9zz3b3beiXv8qXRasnFat5q","1W7cgo7j7-aDTaSyYhViTBHV6CvJCtb_a"]}]}];
+const PAGE = 48;
+
+const thumb = (id,w)=>`https://lh3.googleusercontent.com/d/${id}=w${w}`;
+const thumbAlt = (id,w)=>`https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+const dlUrl = id=>`https://drive.google.com/uc?export=download&id=${id}`;
+
+const $ = s=>document.getElementById(s);
+const grid=$('grid'), more=$('more');
+let chapter=0, set=0, shown=0, cols=[], ids=[];
+
+/* cover slideshow: picks from the couple and photoshoot sets */
+(function cover(){
+  const pool=[];
+  GALLERY.forEach(c=>c.sets.forEach(s=>{ pool.push(...s.ids); }));
+  const pick=[]; const step=Math.max(1,Math.floor(pool.length/6));
+  for(let i=0;i<pool.length && pick.length<6;i+=step) pick.push(pool[i]);
+  const box=$('slides'); const els=pick.map(id=>{const d=document.createElement('div');d.className='slide';
+    const im=new Image(); im.onload=()=>d.style.backgroundImage=`url("${im.src}")`; im.onerror=()=>{im.onerror=null;im.src=thumbAlt(id,2000)}; im.src=thumb(id,2000);
+    box.appendChild(d);return d;});
+  let i=0; if(els.length){els[0].classList.add('on'); setInterval(()=>{els[i].classList.remove('on'); i=(i+1)%els.length; els[i].classList.add('on');},6000);}
+})();
+
+function navs(){
+  $('chapters').innerHTML=GALLERY.map((c,i)=>`<button class="${i===chapter?'on':''}" data-c="${i}">${c.title}</button>`).join('');
+  $('sets').innerHTML=GALLERY[chapter].sets.map((s,i)=>`<button class="${i===set?'on':''}" data-s="${i}">${s.title}</button>`).join('');
+  const on=$('sets').querySelector('.on'); if(on) on.scrollIntoView({block:'nearest',inline:'center'});
+}
+$('chapters').onclick=e=>{const b=e.target.closest('button'); if(!b) return; go(+b.dataset.c,0,true);};
+$('sets').onclick=e=>{const b=e.target.closest('button'); if(!b) return; go(chapter,+b.dataset.s,true);};
+
+function ncols(){const w=innerWidth; return w<520?2:w<900?3:w<1400?4:5;}
+
+function go(c,s,scroll){
+  chapter=c; set=s; const S=GALLERY[c].sets[s]; ids=S.ids;
+  try{ if(location.hash.slice(1)!==S.slug) history.replaceState(null,'','#'+S.slug); }catch(e){}
+  navs();
+  $('kChapter').textContent=GALLERY[c].title;
+  $('hSet').textContent=S.title;
+  $('count').textContent=ids.length+' photos';
+  build();
+  if(scroll) $('gallery').scrollIntoView({behavior:'smooth'});
+}
+
+function build(){
+  grid.innerHTML=''; cols=[]; shown=0;
+  const n=ncols(); for(let i=0;i<n;i++){const d=document.createElement('div');d.className='col';grid.appendChild(d);cols.push(d);}
+  page();
+}
+
+function page(){
+  const end=Math.min(ids.length,shown+PAGE);
+  for(let i=shown;i<end;i++){
+    const id=ids[i]; const a=document.createElement('a'); a.className='tile'; a.href='#'; a.dataset.i=i;
+    const ph=document.createElement('div'); ph.className='ph';
+    const im=new Image(); im.alt=''; im.loading='lazy'; im.decoding='async';
+    im.onload=()=>{im.classList.add('ok'); a.classList.add('loaded');};
+    im.onerror=()=>{ if(!im.dataset.alt){im.dataset.alt=1; im.src=thumbAlt(id,800);} else a.classList.add('dead'); };
+    im.src=thumb(id,800);
+    a.append(ph,im);
+    a.onclick=e=>{e.preventDefault(); open(i);};
+    cols[i%cols.length].appendChild(a);
+  }
+  shown=end; more.hidden = shown>=ids.length;
+}
+more.onclick=page;
+new IntersectionObserver(es=>{ if(es[0].isIntersecting && shown<ids.length) page(); },{rootMargin:'1200px'}).observe($('sentinel'));
+
+let rT; addEventListener('resize',()=>{clearTimeout(rT); rT=setTimeout(()=>{ if(ncols()!==cols.length){const keep=shown; build(); while(shown<keep) page();}},200);});
+
+/* LIGHTBOX */
+const lb=$('lb'), lbImg=$('lbImg'), spin=$('lbSpin'); let cur=0;
+function open(i){cur=i; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; show();}
+function close(){lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow='';}
+function show(){
+  const id=ids[cur]; lbImg.classList.remove('ok'); spin.style.display='block';
+  lbImg.onload=()=>{lbImg.classList.add('ok'); spin.style.display='none';};
+  lbImg.onerror=()=>{ if(!lbImg.dataset.alt){lbImg.dataset.alt=1; lbImg.src=thumbAlt(id,2400);} };
+  delete lbImg.dataset.alt; lbImg.src=thumb(id,2400);
+  $('lbCount').textContent=(cur+1)+' / '+ids.length;
+  $('lbTitle').textContent=GALLERY[chapter].sets[set].title;
+  $('lbDl').href=dlUrl(id);
+  [cur+1,cur-1].forEach(j=>{ if(ids[j]){const p=new Image(); p.src=thumb(ids[j],2400);} });
+  if(cur>=shown-6 && shown<ids.length) page();
+}
+const step=d=>{cur=(cur+d+ids.length)%ids.length; show();};
+$('lbPrev').onclick=()=>step(-1); $('lbNext').onclick=()=>step(1); $('lbClose').onclick=close;
+$('lbStage').onclick=e=>{ if(e.target===$('lbStage')) close(); };
+addEventListener('keydown',e=>{ if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') close(); else if(e.key==='ArrowRight') step(1); else if(e.key==='ArrowLeft') step(-1); });
+let tx=null; lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>45) step(dx<0?1:-1); tx=null;});
+
+/* ROUTING */
+function fromHash(){
+  const h=location.hash.slice(1);
+  for(let c=0;c<GALLERY.length;c++) for(let s=0;s<GALLERY[c].sets.length;s++) if(GALLERY[c].sets[s].slug===h) return go(c,s,false);
+  go(0,0,false);
+}
+fromHash();
+</script>
+</body>
+</html>
