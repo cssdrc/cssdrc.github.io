@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CSS Media Centre</title>
-<meta name="description" content="Congo Supply & All Services media centre: photos, videos, documents and templates.">
+<meta name="description" content="Congo Supply & All Services media centre: photos, videos, logos and company files.">
 <meta name="theme-color" content="#0B0B0B">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png">
@@ -14,130 +14,179 @@
 <meta name="apple-mobile-web-app-title" content="CSS Media">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--o:#F1A849;--o2:#C97F1F;--k:#0B0B0B;--w:#FFFFFF;--t:#FDF4E7;--t2:#F7E2C2;--gap:10px}
+:root{--o:#F1A849;--o2:#C97F1F;--k:#0B0B0B;--k2:#1A1A1A;--w:#FFFFFF;--bg:#F6F5F2;--t:#FDF4E7;--line:#E6E3DC;--gap:10px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Urbanist,Helvetica,Arial,sans-serif;color:var(--k);background:var(--w);-webkit-font-smoothing:antialiased}
+body{font-family:Urbanist,Helvetica,Arial,sans-serif;color:var(--k);background:var(--bg);-webkit-font-smoothing:antialiased;font-size:16px}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 img{display:block}
-.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
-.k{font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--o2)}
-.dark .k{color:var(--o)}
-h2{font-size:38px;font-weight:800;line-height:1.1}
-.head{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;margin-bottom:36px}
-.head p{font-size:16px;line-height:1.6;max-width:600px}
-.dark{background:var(--k);color:var(--w)}
-.tint{background:var(--t)}
-section.s{padding:80px 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:8px;font-weight:700;font-size:15px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.frame{margin:0 24px;border-radius:24px;overflow:hidden;position:relative}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--o2)}
+.chip i{width:18px;height:18px;border-radius:5px;background:var(--o);display:inline-flex;align-items:center;justify-content:center;font-style:normal}
+.chip i svg{width:11px;height:11px;fill:var(--k)}
+.dark .chip{color:var(--o)}
+.h2{font-size:44px;line-height:1.08;font-weight:700;letter-spacing:-.01em}
+.h2 em{font-style:normal;font-weight:300}
+.lead{font-size:16px;line-height:1.7;color:#4A4A4A}
+.dark .lead{color:rgba(255,255,255,.72)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
 .btn-o{background:var(--o);color:var(--k)}
 .btn-k{background:var(--k);color:var(--w)}
+.btn-w{background:var(--w);color:var(--k)}
 .btn-line{border:1px solid currentColor}
-.pill{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid rgba(255,255,255,.4)}
-.pill.on{background:var(--o);color:var(--k);border-color:var(--o);font-weight:700}
-.tag{display:inline-flex;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px}
-.tag-o{background:var(--o);color:var(--k)}
-.tag-line{border:1px solid currentColor}
-.grid{display:grid;gap:20px}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.ph{background:var(--t2);position:relative;overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s,transform .8s}
+.arr{width:40px;height:40px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;flex:0 0 40px;transition:background .2s,color .2s}
+.arr svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+a:hover .arr{background:var(--k);color:var(--w);border-color:var(--k)}
+.ph{position:relative;overflow:hidden;background:#E9E4DA}
+.ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 1s}
 .ph img.ok{opacity:1}
-a:hover .ph img.ok{transform:scale(1.03)}
-.card{border:1px solid var(--k);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;background:var(--w);color:var(--k)}
-.soon{align-self:start;border:1px dashed var(--o2);border-radius:16px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;background:var(--w);color:var(--k)}
-.soon b{font-size:18px}.soon span{font-size:14px;opacity:.75}
-.play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--o);display:flex;align-items:center;justify-content:center}
-.play svg{width:22px;height:22px;fill:var(--k);margin-left:3px}
-.new{font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:6px;background:var(--k);color:var(--o)}
-/* header */
-header.top{position:sticky;top:0;z-index:30;background:var(--k);color:var(--w);border-bottom:1px solid rgba(255,255,255,.12);padding-top:env(safe-area-inset-top)}
-header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:16px;padding-bottom:16px}
-.logo{display:flex;align-items:center;gap:12px}
-.mark{width:44px;height:44px;border-radius:8px;flex:0 0 auto;object-fit:cover}
-.logo b{font-size:16px;font-weight:700;display:block;line-height:1.15}.logo small{font-size:13px;opacity:.75}
-.lang{display:flex;border:1px solid rgba(255,255,255,.35);border-radius:999px;overflow:hidden;font-size:13px;font-weight:700}
-.lang button{padding:0 14px;min-height:36px;color:var(--w)}
-.lang button.on{background:var(--w);color:var(--k)}
-.hdr-r{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+a:hover .ph img.ok{transform:scale(1.04)}
+section{padding:96px 0}
+/* topbar */
+.topbar{background:var(--k);color:rgba(255,255,255,.85);font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:40px;flex-wrap:wrap}
+.topbar span{display:inline-flex;align-items:center;gap:8px;margin-right:22px}
+.topbar svg{width:14px;height:14px;stroke:var(--o);fill:none;stroke-width:2}
+.lang{display:flex;gap:2px;font-weight:700}
+.lang button{padding:4px 8px;border-radius:6px;color:rgba(255,255,255,.6);font-size:12px}
+.lang button.on{color:var(--k);background:var(--o)}
+/* nav */
+nav.main{position:sticky;top:0;z-index:40;background:rgba(246,245,242,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+nav.main .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+.brandlogo{height:38px;width:auto}
+.links{display:flex;gap:4px;font-size:15px;font-weight:600}
+.links a{padding:9px 16px;border-radius:999px}
+.links a:hover,.links a.on{background:var(--w)}
+.navr{display:flex;align-items:center;gap:10px}
 /* hero */
-.hero{padding:56px 0 64px;text-align:center}
-.hero h1{font-size:52px;line-height:1.08;font-weight:800}
-.hero h1 span+br+span{color:var(--o)}
-.hero p{font-size:18px;line-height:1.6;opacity:.8;max-width:600px;margin:20px auto 28px}
-.search{max-width:640px;margin:0 auto 24px;display:flex;align-items:center;gap:12px;background:var(--w);border-radius:10px;padding:0 18px}
-.search svg{flex:0 0 20px}
-.search input{flex:1;border:0;outline:none;font:inherit;font-size:16px;padding:16px 0;color:var(--k);background:transparent;min-width:0}
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.results{max-width:640px;margin:-10px auto 24px;background:var(--w);color:var(--k);border-radius:10px;text-align:left;overflow:hidden;display:none}
-.results a{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--t2);font-weight:600}
-.results a span{font-size:13px;opacity:.7;font-weight:500}
-/* featured */
-.feat{display:flex;flex-wrap:wrap;border:1px solid var(--k);border-radius:16px;overflow:hidden}
-.feat .ph{flex:1 1 520px;min-height:360px}
-.feat .tx{flex:1 1 420px;padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center}
-.feat h3{font-size:30px;font-weight:800}
-.mini{display:flex;gap:16px;align-items:center;border-top:2px solid var(--k);padding-top:18px}
-.mini .ph{width:88px;height:88px;flex:0 0 88px;border-radius:10px}
-.mini b{font-size:18px}.mini small{font-size:13px;font-weight:700;color:var(--o2)}
-/* album card */
-.al{width:calc(25% - 15px)}.al .ph{aspect-ratio:4/3}
-@media (max-width:900px){.al{width:calc(50% - 10px)}}
-.al .tx{padding:18px;display:flex;flex-direction:column;gap:4px}
-.al b{font-size:18px}.al span{font-size:14px}
-.pr .ph{height:240px}
-.pr .tx{padding:26px;display:flex;flex-direction:column;gap:12px}
-.pr h3{font-size:24px;font-weight:800}
-.pr .st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center;border-top:1px solid var(--k);padding-top:14px;font-size:13px;font-weight:700}
-.vd .ph{aspect-ratio:16/9;border-radius:14px}
-.vd{display:flex;flex-direction:column;gap:12px}
-.vd b{font-size:18px}
-.sw{height:180px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--k)}
-.sw div{display:flex;align-items:flex-end;padding:12px;font-size:13px;font-weight:700}
-.bk .tx{padding:24px;display:flex;flex-direction:column;gap:12px}
-.bk .tx b{font-size:18px}
-.lp{display:flex;flex-wrap:wrap;border:1px solid var(--k);border-radius:20px;overflow:hidden}
-.lp-prev{flex:1 1 520px;min-height:380px;display:flex;align-items:center;justify-content:center;transition:background .3s}
-.lp-prev img{width:100%;height:100%;max-height:420px;object-fit:contain;opacity:0;transition:opacity .3s}.lp-prev img.ok{opacity:1}
-.lp-side{flex:1 1 340px;padding:36px;display:flex;flex-direction:column;gap:26px;justify-content:center;border-left:1px solid var(--k)}
-.lp-l{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--o2);margin-bottom:10px}.lp-l b{color:var(--k);letter-spacing:0;text-transform:none;font-size:14px}
-.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--k);border-radius:10px;overflow:hidden}
-.seg button{min-height:44px;font-weight:700;font-size:14px;border-left:1px solid var(--k)}.seg button:first-child{border-left:0}.seg button.on{background:var(--k);color:var(--w)}
-.sws{display:flex;gap:12px}.swb{width:48px;height:48px;border-radius:50%;border:1px solid var(--k)}.swb.on{outline:2px solid var(--o);outline-offset:3px}
-.fmt a{min-height:44px;padding:0 18px;font-size:14px}
-@media (max-width:640px){.lp-side{border-left:0;border-top:1px solid var(--k);padding:24px}.lp-prev{min-height:240px}}
-.fam{margin-top:28px}.fam h3{font-size:20px;font-weight:800;margin-bottom:14px;text-align:center}
-.lg{border:1px solid var(--k);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:var(--w)}
-.lg .ph{aspect-ratio:1/1;background:#eee}.lg .ph img{object-fit:contain}
-.lg .tx{padding:14px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
-.lg .tx span{font-size:14px;font-weight:600}
-.fmt{display:flex;gap:6px;justify-content:center}.fmt a{min-height:36px;padding:0 12px;border-radius:8px;font-size:12px;font-weight:800;display:inline-flex;align-items:center;border:1px solid var(--k)}
-.fmt a:first-child{background:var(--o);border-color:var(--o)}
+.hero{height:min(78vh,640px);min-height:460px}
+.hero .ph{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.55))}
+.hero .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:56px;color:var(--w)}
+.hero h1{font-size:76px;line-height:1;font-weight:700;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;font-weight:300;display:block}
+.hero p{font-size:18px;max-width:520px;margin-top:18px;line-height:1.6;opacity:.9}
+.crumb{position:absolute;right:0;bottom:0;z-index:3;background:var(--bg);border-top-left-radius:24px;padding:18px 28px;display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600}
+.crumb b{color:var(--o2)}
+.search{position:relative;max-width:520px;margin-top:28px}
+.search input{width:100%;border:0;outline:none;font:inherit;font-size:16px;padding:17px 56px 17px 22px;border-radius:999px;background:rgba(255,255,255,.96);color:var(--k)}
+.search svg{position:absolute;right:20px;top:50%;margin-top:-10px;width:20px;height:20px;stroke:var(--k);fill:none;stroke-width:2}
+.results{position:absolute;left:0;right:0;top:calc(100% + 8px);background:var(--w);color:var(--k);border-radius:18px;overflow:hidden;display:none;box-shadow:0 12px 40px rgba(0,0,0,.18)}
+.results a{display:flex;justify-content:space-between;gap:12px;padding:14px 22px;border-bottom:1px solid var(--line);font-weight:600}
+.results a span{font-size:13px;color:var(--o2)}
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.intro .h2{margin-top:14px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:22px}
+.checks div{display:flex;gap:10px;align-items:flex-start;font-size:15px;font-weight:600}
+.checks svg{flex:0 0 18px;width:18px;height:18px;stroke:var(--o2);fill:none;stroke-width:2.4;margin-top:2px}
+/* marquee */
+.marq{background:var(--k);color:var(--w);overflow:hidden;white-space:nowrap;padding:22px 0}
+.marq .tr{display:inline-flex;gap:40px;align-items:center;animation:mq 40s linear infinite;font-size:26px;font-weight:600}
+.marq .tr span{display:inline-flex;align-items:center;gap:40px}
+.marq svg{width:26px;height:26px;stroke:var(--o);stroke-width:2;fill:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marq .tr{animation:none}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px}
+.stats div{padding:0 28px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-size:52px;font-weight:700;letter-spacing:-.02em}
+.stats span{font-size:15px;color:#5A5A5A}
+/* album cards */
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}.cards .alc{grid-column:span 2}.cards.r2 .alc:nth-last-child(-n+2){grid-column:span 3}.cards.r2 .alc:nth-last-child(-n+2) .ph{aspect-ratio:16/8}
+.alc{background:var(--w);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px;transition:background .25s}
+.alc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.alc h3{font-size:20px;font-weight:700;line-height:1.2}
+.alc p{font-size:14px;color:#5A5A5A;margin-top:6px}
+.alc .ph{aspect-ratio:4/3.4;border-radius:14px;margin-top:auto}
+.alc .badge{position:absolute;left:12px;bottom:12px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--o);display:flex;align-items:center;justify-content:center}
+.alc .badge svg{width:18px;height:18px;stroke:var(--k);fill:none;stroke-width:2}
+.alc.hl{background:var(--o)}
+.alc.hl p{color:var(--k)}
+.alc.hl .arr{background:var(--k);color:var(--w);border-color:var(--k)}
+.alc.hl .badge{background:var(--k)}.alc.hl .badge svg{stroke:var(--o)}
+/* project */
+.proj{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}
+.col3{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;min-height:460px}
+.col3 .ph{border-radius:18px}
+.col3 .ph:first-child{grid-row:span 2}
+.pcard{background:var(--o);color:var(--k);border-radius:22px;padding:40px;display:flex;flex-direction:column;gap:18px;justify-content:space-between}
+.pcard h3{font-size:36px;font-weight:700;line-height:1.05}
+.pcard h3 em{font-style:normal;font-weight:300}
+.pnum{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.25);padding-top:20px}
+.pnum b{display:block;font-size:34px;font-weight:700}
+.pnum span{font-size:14px}
+.soonline{border:1px dashed rgba(255,255,255,.35);border-radius:22px;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px;color:rgba(255,255,255,.75);font-size:15px}
+/* video */
+.vid{height:520px;display:block}
+.vid .ph{position:absolute;inset:0}
+.vid::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.vid .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;color:var(--w);text-align:center;padding:24px}
+.play{width:92px;height:92px;border-radius:50%;background:var(--o);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 14px rgba(241,168,73,.25)}
+.play svg{width:30px;height:30px;fill:var(--k);margin-left:4px}
+.vid h3{font-size:40px;font-weight:700;line-height:1.1}
+.vid h3 em{font-style:normal;font-weight:300}
+/* brand */
+.bk{display:grid;grid-template-columns:1fr 1.25fr;gap:20px}
+.bk>*{min-width:0}.bk-l{display:flex;flex-direction:column;gap:20px}
+.box{background:var(--w);border-radius:20px;padding:28px}
+.swl{display:flex;gap:12px;margin-top:16px}
+.swl div{flex:1;aspect-ratio:1/1.1;border-radius:14px;display:flex;align-items:flex-end;padding:12px;font-size:12px;font-weight:700}
+.lp{background:var(--w);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.lp-prev{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lp-prev img{width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .3s}.lp-prev img.ok{opacity:1}
+.lp-side{padding:26px 28px;display:flex;flex-wrap:wrap;gap:22px 32px;align-items:flex-end;justify-content:space-between}
+.lp-l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--o2);margin-bottom:10px}
+.seg{display:flex;flex-wrap:wrap;background:var(--bg);border-radius:999px;padding:4px}
+.seg button{min-height:38px;padding:0 14px;border-radius:999px;font-weight:700;font-size:13px}
+.seg button.on{background:var(--k);color:var(--w)}
+.sws{display:flex;gap:10px}
+.swb{width:38px;height:38px;border-radius:50%;border:1px solid var(--line)}
+.swb.on{outline:2px solid var(--k);outline-offset:3px}
+.fmt{display:flex;gap:6px}
+.fmt a{min-height:40px;padding:0 16px;border-radius:999px;font-size:13px;font-weight:800;display:inline-flex;align-items:center;border:1px solid var(--k)}
+.fmt a:first-child{background:var(--k);color:var(--w)}
+/* soon list */
+.soonGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{background:var(--bg);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.sc .ic{width:48px;height:48px;border-radius:14px;background:var(--t);display:flex;align-items:center;justify-content:center}
+.sc .ic svg{width:22px;height:22px;stroke:var(--o2);fill:none;stroke-width:1.8}
+.sc h3{font-size:20px;font-weight:700}
+.sc p{font-size:14px;color:#5A5A5A;line-height:1.6}
+.sc small{margin-top:auto;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--o2)}
 /* install */
-.inst{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px}
-.inst .icon{width:120px;height:120px;border-radius:28px;flex:0 0 120px}
-.inst .tx{flex:1 1 420px;max-width:600px;display:flex;flex-direction:column;gap:14px}
-.inst h2{font-size:32px}
-.os{border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
-.os b{color:var(--o)}
-footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom));font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.inst{background:var(--k);color:var(--w);border-radius:24px;padding:56px;display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
+.inst img{width:112px;height:112px;border-radius:26px}
+.inst h3{font-size:34px;font-weight:700;line-height:1.1}.inst h3 em{font-style:normal;font-weight:300}
+.inst p{color:rgba(255,255,255,.7);margin-top:10px;line-height:1.6}
+/* footer */
+footer{margin:0 24px 24px;border-radius:24px;background:var(--k);color:var(--w);padding:64px 0 28px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fg h4{font-size:15px;font-weight:700;margin-bottom:14px}
+.fg p,.fg a{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;display:block}
+.fg a:hover{color:var(--o)}
+.fbot{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.5)}
 /* album view */
 #albumView{display:none}
-.av-head{padding:56px 0 32px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
-.av-head h1{font-size:44px;font-weight:800}
-.back{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-bottom:2px solid var(--o);padding-bottom:2px}
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:8px}
-.tabs a{min-height:38px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:1px solid var(--k);font-weight:600;font-size:14px}
+.avh{height:340px}
+.avh .ph{position:absolute;inset:0}
+.avh::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.6))}
+.avh .in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:44px;color:var(--w);gap:6px}
+.avh h1{font-size:56px;font-weight:700;line-height:1}
+.avbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs a{min-height:40px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:var(--w);font-weight:600;font-size:14px}
 .tabs a.on{background:var(--k);color:var(--w)}
-.mason{display:flex;gap:var(--gap);padding:0 var(--gap) 40px;max-width:1680px;margin:0 auto}
+.mason{display:flex;gap:var(--gap);padding:0 24px 40px}
 .col{flex:1 1 0;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
-.tile{position:relative;background:var(--t2);overflow:hidden;cursor:zoom-in;display:block;border-radius:4px}
+.tile{position:relative;background:#E9E4DA;overflow:hidden;cursor:zoom-in;display:block;border-radius:12px}
 .tile img{width:100%;height:auto;opacity:0;transition:opacity .5s}
 .tile img.ok{opacity:1}
 .tile .sp{aspect-ratio:3/2}
@@ -149,154 +198,151 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(8,8,8,.97);display:none;color:#fff;user-select:none}
 .lb.open{display:block}
 .lb-stage{position:absolute;inset:64px 72px;display:flex;align-items:center;justify-content:center}
-.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;opacity:0;transition:opacity .3s}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;opacity:0;transition:opacity .3s;border-radius:6px}
 .lb-stage img.ok{opacity:1}
-.lb-stage iframe{width:100%;max-width:1280px;aspect-ratio:16/9;border:0;display:none}
-.spin{position:absolute;width:28px;height:28px;border:1px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+.lb-stage iframe{width:100%;max-width:1280px;aspect-ratio:16/9;border:0;display:none;border-radius:10px}
+.spin{position:absolute;width:28px;height:28px;border:2px solid rgba(255,255,255,.2);border-top-color:var(--o);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.lb-top{position:absolute;top:0;left:0;right:0;height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 18px;padding-top:env(safe-area-inset-top)}
-.lb-top .c{font-size:12px;letter-spacing:.2em;opacity:.8}
-.lb-top .t{font-weight:700;font-size:16px}
-.ic{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff}
-.ic:hover{background:rgba(255,255,255,.1)}
-.ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.6}
+.lb-top{position:absolute;top:0;left:0;right:0;height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 18px}
+.lb-top .c{font-size:13px;font-weight:600;opacity:.8}
+.lb-top .t{font-weight:700}
+.ic2{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff}
+.ic2:hover{background:rgba(255,255,255,.1)}
+.ic2 svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8}
 .lb-x{justify-self:end}
 .nav{position:absolute;top:50%;margin-top:-22px}.prev{left:12px}.next{right:12px}
-.lb-bot{position:absolute;bottom:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}
-/* modal */
+.lb-bot{position:absolute;bottom:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:center}
 .modal{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.6);display:none;align-items:flex-end;justify-content:center;padding:16px}
 .modal.open{display:flex}
-.sheet{background:var(--w);color:var(--k);border-radius:20px;padding:24px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:14px;margin-bottom:env(safe-area-inset-bottom)}
-.sheet b{font-size:18px}
-.sheet ol{padding-left:20px;line-height:1.8;font-size:15px}
-@media (max-width:900px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sheet{background:var(--w);border-radius:24px;padding:26px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:14px}
+.sheet b{font-size:19px}.sheet ol{padding-left:20px;line-height:1.9}
+@media (max-width:1000px){.cards{grid-template-columns:1fr 1fr}.cards .alc,.cards.r2 .alc:nth-last-child(-n+2){grid-column:auto}.cards.r2 .alc:last-child{grid-column:span 2}.proj,.bk,.intro{grid-template-columns:1fr}.links{display:none}.fg{grid-template-columns:1fr 1fr}.inst{grid-template-columns:1fr;text-align:left}.soonGrid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){
- .wrap{padding:0 18px}.hero h1{font-size:36px}h2{font-size:30px}section.s{padding:56px 0}
- .g2,.g3{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .feat .tx{padding:24px}.feat .ph{min-height:220px}
- .hdr-r .back-site{display:none}.logo small{display:none}
- header.top .wrap{flex-wrap:nowrap}#installBtn span{display:none}#installBtn{padding:0 12px}.mark{width:40px;height:40px}
- .lb-stage{inset:58px 0 70px}.nav{display:none}.lb-top .t{display:none}
- .av-head h1{font-size:32px}:root{--gap:6px}
+ .wrap{padding:0 18px}.frame{margin:0 10px;border-radius:18px}footer{margin:0 10px 10px}
+ .topbar .info{display:none}.topbar .wrap{justify-content:flex-end}
+ .hero .in{padding:26px}.hero h1{font-size:44px}.crumb{display:none}
+ section{padding:64px 0}.h2{font-size:32px}
+ .stats{grid-template-columns:1fr 1fr;gap:28px 0}.stats div:nth-child(3){border-left:0;padding-left:0}.stats b{font-size:40px}
+ .cards,.soonGrid{grid-template-columns:1fr}.cards.r2 .alc:last-child{grid-column:auto}.cards.r2 .alc .ph{aspect-ratio:4/3!important}.checks{grid-template-columns:1fr}
+ .col3{min-height:320px}.pcard{padding:28px}.pcard h3{font-size:28px}
+ .vid{height:380px}.vid h3{font-size:28px}
+ .inst{padding:32px}.fg{grid-template-columns:1fr}
+ #installBtn span{display:none}#installBtn{padding:0 14px}
+ .avh{height:240px}.avh .in{padding:24px}.avh h1{font-size:36px}.mason{padding:0 10px 40px}:root{--gap:6px}
+ .lb-stage{inset:58px 0 76px}.nav{display:none}.lb-top .t{display:none}
 }
 </style>
 </head>
 <body>
-<header class="top">
-<div class="wrap">
-<a class="logo" href="#home"><img class="mark" src="mark.png" alt="CSS"><div><b>Media Centre</b><small>Congo Supply &amp; All Services</small></div></a>
-<div class="hdr-r">
+<div class="topbar"><div class="wrap">
+<div class="info"><span><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+243 896 969 175</span><span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@css-drc.com</span><span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Kinshasa · Lubumbashi · Kolwezi · Kampala</span></div>
 <div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="fr">FR</button></div>
-<button class="btn btn-o" id="installBtn" aria-label="Install app" style="min-height:40px;font-size:14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg><span data-t="install">Install app</span></button>
-<a class="btn btn-line back-site" href="https://www.css-drc.com" style="min-height:40px;font-size:14px;color:#fff" data-t="backsite">Back to css-drc.com</a>
-</div>
-</div>
-</header>
+</div></div>
+
+<nav class="main" aria-label="Main"><div class="wrap">
+<a href="#home" aria-label="CSS Media Centre"><img class="brandlogo" id="brandLogo" alt="Congo Supply &amp; All Services"></a>
+<div class="links"><a href="#albums" data-t="nAlbums">Albums</a><a href="#projects" data-t="nProjects">Projects</a><a href="#videos" data-t="nVideos">Videos</a><a href="#brand" data-t="nBrand">Brand kit</a><a href="#files" data-t="nFiles">Files</a></div>
+<div class="navr"><button class="btn btn-k" id="installBtn" aria-label="Install app" style="min-height:44px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg><span data-t="install">Install app</span></button></div>
+</div></nav>
 
 <main id="homeView">
-<section class="dark hero">
-<div class="wrap">
-<h1><span data-t="h1a">Photos, videos and official files.</span><br><span data-t="h1b">All in one place.</span></h1>
-<p data-t="heroP">For partners, clients, press and staff. Everything here is free to view and download.</p>
-<label class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" autocomplete="off" aria-label="Search" data-tp="searchPh"></label>
-<div class="results" id="results"></div>
-<nav class="pills" id="pills" aria-label="Sections"></nav>
+<div class="frame hero"><div class="ph" id="heroPh"></div>
+<div class="in">
+<span class="chip" style="color:var(--o)"><i><svg viewBox="0 0 10 10"><path d="M1 9V5h2v4zm3 0V3h2v6zm3 0V1h2v8z"/></svg></i><span data-t="heroChip">CSS Media Centre</span></span>
+<h1 style="margin-top:14px"><span data-t="h1a">Our work,</span><em data-t="h1b">in pictures.</em></h1>
+<p data-t="heroP">Photos, videos, logos and company files from Congo Supply &amp; All Services, free to view and download.</p>
+<label class="search"><span style="position:absolute;width:1px;height:1px;overflow:hidden">Search</span><input id="q" type="search" autocomplete="off"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><div class="results" id="results"></div></label>
 </div>
+<div class="crumb"><a href="https://www.css-drc.com">css-drc.com</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b data-t="crumb">Media Centre</b></div>
+</div>
+
+<section><div class="wrap">
+<div class="intro">
+<div><span class="chip"><i><svg viewBox="0 0 10 10"><path d="M1 9V5h2v4zm3 0V3h2v6zm3 0V1h2v8z"/></svg></i><span data-t="kIntro">What you will find</span></span>
+<h2 class="h2"><span data-t="iA">Every image of CSS,</span> <em data-t="iB">ready to share with clients, partners and the press.</em></h2></div>
+<div><p class="lead" data-t="iP1">From the KENGE workshop to our trucks on the road, this is where CSS keeps its visual memory. Browse by album, open any photo in full size and download the original.</p>
+<p class="lead" style="margin-top:14px" data-t="iP2">Need a logo for a document or a stand? The brand kit has every version, in every format.</p>
+<div class="checks" id="checks"></div></div>
+</div>
+<div class="stats" id="stats"></div>
+</div></section>
+
+<div class="marq" aria-hidden="true"><div class="tr" id="marq"></div></div>
+
+<section id="albums"><div class="wrap">
+<div class="sec-h"><div><span class="chip"><i><svg viewBox="0 0 10 10"><path d="M1 9V5h2v4zm3 0V3h2v6zm3 0V1h2v8z"/></svg></i><span data-t="kAlbums">Albums</span></span><h2 class="h2" style="margin-top:12px"><span data-t="aA">Browse</span> <em data-t="aB">by album</em></h2></div>
+<p class="lead" style="max-width:380px" data-t="aP">Each album is a Drive folder. New photos appear here as soon as they are added.</p></div>
+<div class="cards" id="albGrid"></div>
+</div></section>
+
+<section class="dark" id="projects" style="background:var(--k);color:var(--w)"><div class="wrap">
+<div class="sec-h"><div><span class="chip"><i><svg viewBox="0 0 10 10"><path d="M1 9V5h2v4zm3 0V3h2v6zm3 0V1h2v8z"/></svg></i><span data-t="kProjects">Projects</span></span><h2 class="h2" style="margin-top:12px"><span data-t="pA">Proof</span> <em data-t="pB">of work</em></h2></div>
+<p class="lead" style="max-width:380px" data-t="pP">Photos, videos and figures grouped by project. Useful for tenders and client meetings.</p></div>
+<div id="projBox"></div>
+<div class="soonline"><span data-t="moreProj">More projects are on the way.</span><span class="chip" style="color:var(--o)" data-t="soon">Coming soon</span></div>
+</div></section>
+
+<section id="videos" style="padding-bottom:0"><div class="wrap"><div class="sec-h" style="margin-bottom:28px"><div><span class="chip"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i><span data-t="kVideos">Videos</span></span><h2 class="h2" style="margin-top:12px"><span data-t="vA">See it</span> <em data-t="vB">in motion</em></h2></div></div></div>
+<a class="frame vid" href="#" id="vidHero"></a>
 </section>
 
-<section class="s" id="latest"><div class="wrap">
-<div class="head"><div class="k" data-t="kLatest">Latest</div><h2 data-t="hLatest">Latest albums</h2></div>
-<div id="featured"></div>
-<div class="grid g3" id="minis" style="margin-top:24px"></div>
-</div></section>
-
-<section class="s dark" id="projects"><div class="wrap">
-<div class="head"><div class="k" data-t="kProjects">Projects</div><h2 data-t="hProjects">Proof of work</h2><p data-t="pProjects">Each project keeps its photos, videos and reports together. Ready for tenders.</p></div>
-<div class="grid g3" id="projGrid"></div>
-</div></section>
-
-<section class="s tint" id="albums"><div class="wrap">
-<div class="head"><div class="k" data-t="kAlbums">Albums</div><h2 data-t="hAlbums">All albums</h2></div>
-<div id="albGrid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px"></div>
-</div></section>
-
-<section class="s dark" id="videos"><div class="wrap">
-<div class="head"><div class="k" data-t="kVideos">Videos</div><h2 data-t="hVideos">Watch</h2></div>
-<div class="grid g3" id="vidGrid"></div>
-</div></section>
-
-<section class="s" id="brand"><div class="wrap">
-<div class="head"><div class="k" data-t="kBrand">Brand kit</div><h2 data-t="hBrand">Use our brand correctly</h2></div>
-<div class="grid g3">
-<div class="card bk"><div class="sw"><div style="background:#F1A849">#F1A849</div><div style="background:#0B0B0B;color:#fff">#0B0B0B</div><div style="background:#fff">#FFFFFF</div></div><div class="tx"><b data-t="colours">Colours</b><span data-t="coloursP">Orange and black. No grey.</span></div></div>
-<div class="card bk"><div class="sw" style="grid-template-columns:1fr;align-items:center;justify-items:center;font-size:48px;font-weight:800">Aa</div><div class="tx"><b>Urbanist</b><a class="btn btn-o" href="https://fonts.google.com/specimen/Urbanist" target="_blank" rel="noopener" style="align-self:flex-start" data-t="getFont">Get the font</a></div></div>
-<div class="card bk"><div class="sw" style="grid-template-columns:1fr;background:#0B0B0B"><img src="mark.png" alt="" style="width:96px;height:96px;margin:auto;border-radius:12px"></div><div class="tx"><b data-t="logoPack">Full logo pack</b><a class="btn btn-o" id="pdfBtn" target="_blank" rel="noopener" style="align-self:flex-start" data-t="dlPdf">Download PDF</a></div></div>
+<section id="brand"><div class="wrap">
+<div class="sec-h"><div><span class="chip"><i><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4"/></svg></i><span data-t="kBrand">Brand kit</span></span><h2 class="h2" style="margin-top:12px"><span data-t="bA">Our brand,</span> <em data-t="bB">used the right way</em></h2></div></div>
+<div class="bk">
+<div class="bk-l">
+<div class="box"><b style="font-size:18px" data-t="colours">Colours</b><p class="lead" style="margin-top:6px" data-t="coloursP">Orange and black. Never grey.</p><div class="swl"><div style="background:#F1A849">#F1A849</div><div style="background:#0B0B0B;color:#fff">#0B0B0B</div><div style="background:#fff;border:1px solid var(--line)">#FFFFFF</div></div></div>
+<div class="box" style="display:flex;justify-content:space-between;align-items:center;gap:16px"><div><b style="font-size:18px">Urbanist</b><p class="lead" style="margin-top:6px" data-t="fontP">Our typeface for every document.</p></div><span style="font-size:64px;font-weight:700;line-height:1">Aa</span></div>
+<div class="box" style="display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--o)"><div><b style="font-size:18px" data-t="logoPack">Full logo pack</b><p style="margin-top:6px;font-size:15px" data-t="logoPackP">Every version in one PDF.</p></div><a class="btn btn-k" id="pdfBtn" target="_blank" rel="noopener" data-t="dlPdf">Download PDF</a></div>
 </div>
-<div id="logoLib" style="margin-top:24px"></div>
-</div></section>
-
-<section class="s tint" id="documents"><div class="wrap">
-<div class="head"><div class="k" data-t="kDocs">Documents</div><h2 data-t="hDocs">Official files</h2></div>
-<div id="docList"></div>
-</div></section>
-
-<section class="s" id="templates"><div class="wrap">
-<div class="head"><div class="k" data-t="kTpl">Templates</div><h2 data-t="hTpl">Company templates</h2><p data-t="pTpl">Always the latest version, with the current logo and legal details.</p></div>
-<div id="tplList"></div>
-</div></section>
-
-<section class="s tint" id="staff"><div class="wrap">
-<div class="head"><div class="k" data-t="kStaff">Staff</div><h2 data-t="hStaff">Products, contacts and procedures</h2></div>
-<div class="grid g3" id="staffGrid"></div>
-</div></section>
-
-<section class="s dark" id="install"><div class="wrap inst">
-<img class="icon" src="icon-512.png" alt="">
-<div class="tx">
-<h2 data-t="hInstall">Put CSS on your home screen</h2>
-<p style="font-size:16px;line-height:1.6;opacity:.8" data-t="pInstall">Opens like an app, full screen, no browser bar. Works on Android and iPhone.</p>
-<div class="grid g2" style="gap:12px">
-<div class="os"><b>Android</b><span data-t="android">Tap Install app, then Install.</span></div>
-<div class="os"><b>iPhone</b><span data-t="iphone">In Safari: Share, then Add to Home Screen.</span></div>
-</div>
-<button class="btn btn-o" id="installBtn2" style="align-self:flex-start" data-t="install">Install app</button>
+<div id="logoLib"></div>
 </div>
 </div></section>
+
+<section id="files" style="background:var(--w)"><div class="wrap">
+<div class="sec-h"><div><span class="chip"><i><svg viewBox="0 0 10 10"><path d="M2 1h4l2 2v6H2z"/></svg></i><span data-t="kFiles">Files</span></span><h2 class="h2" style="margin-top:12px"><span data-t="fA">Documents</span> <em data-t="fB">and templates</em></h2></div><p class="lead" style="max-width:380px" data-t="fP">These sections are being filled. Check back soon.</p></div>
+<div class="soonGrid" id="soonGrid"></div>
+</div></section>
+
+<section id="install"><div class="wrap"><div class="inst">
+<img src="icon-512.png" alt="">
+<div><h3><span data-t="hInstall">Keep CSS</span> <em data-t="hInstall2">on your home screen.</em></h3><p data-t="pInstall">Opens full screen like an app. On iPhone: Share, then Add to Home Screen.</p></div>
+<button class="btn btn-o" id="installBtn2" data-t="install">Install app</button>
+</div></div></section>
 </main>
 
 <main id="albumView">
-<div class="wrap av-head">
-<a class="back" href="#home"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span data-t="back">All albums</span></a>
-<div class="k" id="avGroup"></div>
-<h1 id="avTitle"></h1>
-<div id="avCount" style="font-size:14px;letter-spacing:.12em"></div>
-<div class="tabs" id="avTabs"></div>
-</div>
+<div class="frame avh" id="avHero"><div class="ph" id="avPh"></div><div class="in"><a href="#albums" style="font-weight:700;font-size:15px;display:inline-flex;gap:8px;align-items:center;margin-bottom:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg><span data-t="back">All albums</span></a><span class="chip" style="color:var(--o)" id="avGroup"></span><h1 id="avTitle"></h1></div></div>
+<div class="wrap avbar"><div class="tabs" id="avTabs"></div><span id="avCount" style="font-weight:700"></span></div>
 <div class="mason" id="mason"></div>
 <div id="sentinel" style="height:1px"></div>
-<button class="btn btn-line more" id="moreBtn" data-t="more">Load more</button>
+<button class="btn btn-k more" id="moreBtn" data-t="more">Load more</button>
 </main>
 
-<footer class="dark"><div class="wrap"><span>Congo Supply &amp; All Services · Media Centre</span><a href="https://www.css-drc.com" style="color:var(--o);font-weight:600">www.css-drc.com</a></div></footer>
+<footer><div class="wrap">
+<div class="fg">
+<div><img src="mark.png" alt="" style="width:52px;height:52px;border-radius:12px"><p style="margin-top:16px;max-width:300px" data-t="fAbout"></p></div>
+<div><h4 data-t="fOffices">Offices</h4><p>Kinshasa (HQ)</p><p>Lubumbashi</p><p>Kolwezi</p><p>Kampala</p></div>
+<div><h4 data-t="fContact">Contact</h4><a href="tel:+243896969175">+243 896 969 175</a><a href="mailto:info@css-drc.com">info@css-drc.com</a><a href="https://www.css-drc.com">www.css-drc.com</a></div>
+<div><h4 data-t="fExplore">Explore</h4><a href="#albums" data-t="nAlbums">Albums</a><a href="#projects" data-t="nProjects">Projects</a><a href="#videos" data-t="nVideos">Videos</a><a href="#brand" data-t="nBrand">Brand kit</a></div>
+</div>
+<div class="fbot"><span>© Congo Supply &amp; All Services</span><span>cssdrc.github.io</span></div>
+</div></footer>
 
 <div class="lb" id="lb" aria-hidden="true">
-<div class="lb-top"><div class="c" id="lbC"></div><div class="t" id="lbT"></div><button class="ic lb-x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+<div class="lb-top"><div class="c" id="lbC"></div><div class="t" id="lbT"></div><button class="ic2 lb-x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
 <div class="lb-stage" id="lbS"><div class="spin" id="lbSp"></div><img id="lbI" alt=""><iframe id="lbF" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-<button class="ic nav prev" id="lbP" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
-<button class="ic nav next" id="lbN" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
-<div class="lb-bot"><a class="btn btn-line" id="lbD" href="#" target="_blank" rel="noopener" style="color:#fff;min-height:40px;font-size:13px;letter-spacing:.2em;text-transform:uppercase" data-t="download">Download</a></div>
+<button class="ic2 nav prev" id="lbP" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+<button class="ic2 nav next" id="lbN" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+<div class="lb-bot"><a class="btn btn-o" id="lbD" href="#" target="_blank" rel="noopener" data-t="download">Download</a></div>
 </div>
-
 <div class="modal" id="iosModal"><div class="sheet"><b data-t="iosT">Add to your home screen</b><ol><li data-t="ios1">Open this page in Safari.</li><li data-t="ios2">Tap the Share button.</li><li data-t="ios3">Choose Add to Home Screen.</li></ol><button class="btn btn-k" id="iosOk">OK</button></div></div>
 
 <script>
-const DATA = {"albums":[{"slug":"kenge-factory","title":"Kenge Factory","group":"Kenge","ids":["1Hy9LXb-TogBPR8uweVgcWgmKrKPvFN9K","15qMck7TpQJfEO-sgDDLOhQS0h9-lkpSs","1-qZk9CYbv49_W6KZlp3FbftrDd_d55AN","1sYgzIjwfFeAlCnbllZZo4je1h1aDcRl2","1XV_BG-lzdT0Fs2SSK1_o-m8386FMzBYD","1UH0HVG23ar93b-amlZomLQgs5BPrG-mR","1f9SKy2_-sK69JQwmYnkLjgBdl1ewXgmt","1pCsS_ExYoC6c4AaO6CwHTaMvC55kump1","1sIKfRV5sKhVmIleXRFOf0IkP8UVusW3Y","1R2EHa5JFTwVY_RbV7eREpZciuu5xOOiu","1Vf7GxfVVaGjG4hlh1rAe8BGIqlTEnNAT","1jxWxuQSqVGtqXRhxfdYDVcS3SuA8BR1a","1RR7uRJHTWk7UUvQrqCuqwjjh9oGQNFSk","1niq7NeLtiN1fkmotra435vV6jC97AOKC","1VXnuwhspGeNONHhJ8DtWP0yW-7LOuRHp","1wBIOlwj5F8-yDTur5-ZQCzlrly5hGRSz","1avBOzRh4IjZOORK8zze09kMCyok5wY0K","1vNRBCjev72SNi7xMFJFbyKNlDo02VQbH","1BnRdsqBVvvxrdZnIcraGVKh-27LUFT8Y","1ojnLsQdahAbzBxGYu1WfoIWn1qULeFGU","1GyL_uVOMKYO-ERi_QL7B_smAAsfrW8NZ","1HAIcHVl5BH9oIScltkLNsgbwZFDlrUN_","1Wuo4CM2AmoyuuBOIygWtup3nbBxtQxmE","1tyPKl__vjXFHI8qCWsNm5O0reqKHu_Fr","1GjcX1ieSjS2NnyENI9vRDR4xRA0Ihxdy","1qPa5JbS3RiRS3W_zaeuhSW9AMcoSfR-2","1WrNWgQagRhCnJNwhyucJtfwtUKqrPy4p","1T_tCZBe9XOmcmEs2tOPZPcKtXbo0DXq2","1KzvM_F4ZvUbU8KxqycKkpYmp1-WSbSj9","1kdxgFy0VlqV9HfWRNhYb6X07ATPs3ONt","1DQyzain5n-0YFHD0jc1jxo8V0hAIAuWM","1WcG6Xh0iiKQl1BCpToE5hlQgZzSvY1ul","1t5PW_bhMpYlxKJ-1QM5lTSzBx2UZbN5v","1rAmmc2HUJYItj-xB-K5P1Kqf-Y3D8u0y","11fZpjNw7aX-oWbhKTIeCD4BFNaFQ65xc","1g9wOTiDklBNHNv1hcOUaCy5zM6Z9k6jB","10y0R3Y0hemH0LMMFrswHe4Lnmj39SbcA","1_ILRRuBCEKL5WjMo3oOnZI_kuPM4yZP7","1qrFWwDzrEtb713alj_uU1TGXYoo-OiV2","10EN6552hvHhPaCMB7M9cQi_0CYmcnzIJ","1WXYqWCmsacUPvzmlIEV3dfvvbT5rzhOx","1dwXcjQl24x7S3-p6WvDkwuH9FoSxudpi","1cmkTSaVlzZKwGw_mmMsnMUf5VUW56DDr","1aXiq9s-yEpumD2KgSn05MBUTZtt0v_Kj","1evbuQv84CMIU8XMPk8zPrDLwV_j6731d","1iPR2RUcE4693sr2faHfMAKWd1mziBRyp","1EmQYRa-ExefuOJP-HeVbsc_J5SLtix21","1E7FIPjcIBbZB1Np3cWtw37S-osKdpZPX","1XUf0RImblxw4s3XeNGzvlRntOiTWFNOG","1bZbopNG0ZuNYxcZcDan5y1ZxtxsXXZnV","1iA3QagyQM5I_4FtnvXW1Mtz_OgaiE_EE","1KFlKDAls8eoANB7QWAy0XuzmaJjl1RsS","17EEtripGADQNJXgiszxKyDOr5ZHWADiL","1-saqnQWP4NrgiL-YZ_tjc_CG-gdpya8o","15bBgcffALYLhAKy3yCi1L_3ZxfsqRtGL","1MlbCbZROo1evqrfQnD0bLy5Q7isrKlE5","1sfZrzdlLHV1KfBL9b-zqbz2ZrKNyX77C","1T86irjdid5UE8CjvjKsmWCmkj0Ag38m2","1hU92bWiNraRoRt-36PF5hkv120zec4v6","1vDkJY4Ys4VY0OUunN_lSEXHBnvRJMguF","1Tk33G7lTVuFV8LKTOqS0egE76CCNM5Jl","1AbgFQGMlO1J4fsRmirBemOElOCwNYB5-","1nEDY5XKPg-aTuXjHHUSS22xT3RmBPkk-","1i5_kQCTMx1L9svPd100Pj5b759AL-4jK","15-qNGZdbNa25cxkeOTV9DPS9YE_4kNpx","1F-r33TLQWkxxDlHgTibUQ1AX-yji0NBU","10WhI84fGvI1q9t0J-Iz6DWudAotbgHmZ","1_rR1eUzafc3MCAcbG8J_BJqL4wprHTVn","1JQ4JdO9li2FNs5lqGk8mGX7jjekbmDFn","1jVdcyB3ILGzdgG2uS3Ia1vgGSsdZJi2T","1xPTbTJx9snEynLl3NmjtNgO1pW5BqR3W","1iZ8pWa9mCLZrCWD4_uOdurtx0FI6mtml","12WBfLlO2Ub4Jcg2wLp_gkfE7Uzhujgkh","1pKzpFp3u05FvORQqqB-0cXaxRR3dO9e7","1u589fg_ViYUYtK_ySzmtLCrjdtjGu2hL","1l3qjNXBuIcJo9FiWs6Q7RcrXEqMJ6X8m","1srG052oN_kAifWHRmKqRxGINwush43zg","1ra_xVTAQoHVLO8yHJxe03fpM6iZYjfVh","19cBT-pMKAeRuNroF6srG_uaM3HGHYMQG","1jU4vb6H4p_efhKfkcO-FOxGk54vq8fXy","1G-eRQFSwZoFvC-Zx12PXnV0wC0QLr-NT","1LIuWwuVp02GAF8OaXm2LLo3Ht5EwjUC1","1aFRAqo6-TFsBGJUp795G2_a_COYYkRg2","17q4w4Tu7DGVqn_bHJHAyaLlYneKdLGN4","1y8CClS94R2MadYm4rN5v8N6bqCNl8MF7","1hOl8HRuVDaVV_MySpCi7maEfhliIEQSH","12YauLe_nP_aJncnrz15aqTTrgWTEjVBG","15BN03bYafpqVfbmCo1jsHwfPKMCfI1CI","1Jp1sUItqF5V2V1Wi4TB7D4-2Silz9cG-","1eDCDsR50hU_rG0ZfGmsgXiTQikdgnzcn","1m1Uk5tUhRKi67uLGsmMfDY7A6LK3v7Ao","1SHJ4Dbm6W8JYYl16kItZZCCbBpJQ86VN","1FIEN-PcgHhqaGVRQXuzJqixHxJdPF7Rc","1cp37wEVP2p4pgmrf30gB0JdQwUtAEVq7","1vSXEwCh0t5HW_cZcqyal2SKN7H8uMRLJ","1XeC0whOtFgRKfXouF7iNs3PE395WGjis","1kf2byb20lp4h8IRy1KqqZLF0NAv5QWr5","1XpunOJxOrz3iBw2q1aoRTfnkc9emTJLK","1RXZyZ447DTKvYsCFqMmdDIpif4dogalK","119OJuNIUVCfHWlL3DYCV1NDDA1ZA-KXT","19v8_a_WD7QLT47pKKRy_q92KDyz4jxCl","1ucN1e1PSb1zhgeloe6vp0khYOsGZleBF","1Pgp6TjvkOJagtSAulWixgpTr0xzo6CWz","10Gy2ycYyub3ZC8wqEaBp7qnLJbWsF5yY","10LUDqfSMWl06FAsGtz7HdcQVMF5JYiqw","1IVW-Y4X6HhVyWc8ZKGXtBCK7Xmj8TUrM","1Np7deeGziyBEcfXfrKJrDdWzr6cf1i-x","1ggJAx-3EGCjrnOrekUk2z0oebY4xrs_G","1oYAJoNiUwySf7sOrMaThLB01AOaoR-tu","1UbGgYWIwTtQ39VchAp5SFC4Yjs7B7Pij","1uzEspAhvcAJGPUbbszJkKt50n81q3Kt0","14WL-su2yn9w5s_35lXzGO12sk-CEpM_7","1rrRik36lqb-lGjixGalVXFdK5YK27Dzr","1EyRJ9YdzMoyPA7hTiC8ol-kuPzX8Si4z","14J3c-1VD7sHxA6KK_yzEOWdvtqqDWK8x","1q0GvVH0KqYmrfiGBTgKdzkQuRCWdb1uK","1RpB0gQePIleci-QAuLjTcfAb7IZ1fiCF","1G6WwKNxtfvR4Rg8NebiBt3CKGHVDpsWY","1nw7DeX5G3HnMdG0MhtE0Pn7KpkgYcPzO","14R7ucXDeFG_kHx2guknU_Ndu5fOzBFfX","1VvoC7Xvit65ef-aHYFVos9IYDdkEDa0U","1KMh20CaN0ThDJBMuu4ZiazGde4MEa5mL","1TcOGeER_LCo7kapdN99O2d7OK73DXp-a","1U27PMIyKLKLekAGRGGkNyL2btImMZK_I","1satLh_hjQjHdD_5HNfZ6TEYd6eGDzAih","1_YNYEI8VKRFSw37PzxJ6s43-1suJWops","1rR9SxQt-BRvKYBvbuqAzdxSAZ7FUP0L0","1Xgqqx5IqyIhGFN-83U1MPuJxpSTBKD9H","1CTdnIAqKUY9W2ZlqQMk0uWUlpY-Ce2o2","1UhuPTE6lsMAtzAql_T2LnUIZP9aujDGN","1QeJ_YGylWKn888FTOzmNVKMPqCWIY1-d","1h9Y-PhDawmPvcZWzP3JPM3ALdrs3ONjX","1_-ipP5HgBdmAAlO-aYj7yFz-zk0CCpgf","1VWOV1_5qMu8zjYbb23vTU9FqJMkUo_-S","1Y_yCt9Ad3zxt_z-9CI3Tu7_gTGCnCwOr","1PhUZf7iv1z58PcLJoVOQnqenX71o0xiD","1AaxtTlBkFJxcJ7kprB11XjMqCoVoi0rv","1XGnEcvc2pddoCWzV63KLYvtjif46pMiV","1VHog-szQzl7cZySPMpB5qswIuID6iUqZ","1IW3l7r8d1G_6M4tI7aK_Lvg8vU7uo1_b","1xn0pwfog2KspKAAGfjHUSaHYYskI0jlk","14IjKH4h1efjFVU5-EoRbZJdZrkXcS40k","10zFgoN_JuZcDWOf5XN8-kNQvUPTpBMFx","1e9ekO_B15rX_ZjTs1vEmxrv_G_9641xv","1um90UOdtnND8nnM2CuJhmnKc4p_VJBwX","1381RuTSD8p4_YhtooFAyCVZoAJiQbdpz","1NCWMMy_76JPNjng0fC4MwF7-jzI9WQ8S","12H7iRLISjHE5sTnlE3E1rLEKDZg3Sw2h","1cezQ0csSr7EyRDcJjTeR6tKMdwFwANTr","1y1-L2vwYwmnPwTWZmCsPFspShPo2tTYI","14NJPONsBrSBv9j1U8BElYMvMyUybA9Fq","1fq0YhhJu08aqWs1hlrEhlGYcch9ugQw-","1quVDEBlTVGtCY2WNPJwynz379vuNVjpk","1po1CpM9cw3IpbIkzcAmaXQaQmB6kOC6G","1aOeZU9bw5P-lqyE5gVb2KfbQrRz-8hBy","1Qm8KcZti4GpFD-s6dBWlQQIkNRLEng1p","1TqJEVxBGLIvoMl6gX6oOj1XbfBOAoI8F","1d7-4R4Fy_isHPiyw9LiLLH2LCy9sSL6_","1ClwKQkeoFBHjSwaarJdbhEkjNo82xxnd","1JEVhnjbuIDZANN3UFPmpvM6kOB3tskfG","1lUie0tN5x7mdsCHT-4XZfeMk2-VJjZA3","1Zh2bscNmn-xG21mVYUlnIYyf12buuVHw","1USa4I2iGr7GwJPLRcncf09eX0Yii-lWU","1DUzWLICNeA6JaYpwcXlq3P0B2-tG9ubx","1CxzWTVKDI_HEPACRBhUp05ocZ0gH5Mc8","1vGpxgrVkZu5LOEoql1skpBQMnRvRdNkd","15SQFaQSGVLGgiChveZxQ3reSQxfayJZa","1RBmYGXCrZQCo8yidnZSoijALD4WeyWHG","1vor6_PVe9pH4XsrDF5wq0E2teOQtbXJ8","1JsYZd6k-4FhC7mK0jSmp7SbwS7AsmCs9","1e9fWjmG59n8JL1rugPM2CTdrqd8Olix4","1lotGoSCmuLhZMIV1thCfcM9SNIg-gCbk","1l6q09XPvvGadARPD7PO9Hw7gNsIDuLAL","1Eg61UEZj-gAHPx2EdeDSwJ4bw47dsmlo","1N8C-j9HoG5L5u9waMtTd5umrOvS-0kEy","1_J9o7FNuVoShlCvPRzMPmu8x-1FjhYUu","1cr9Sj13UfwiWR_ggfXgXvvs9exCl0w-A","1pXsY70XiAKd7mGeQvTxX1F4t2hbqIeqp","1dKqyDesoV3VIk5bHaRY7szLEwtxAssYo","153wSZApt8r7IxnAvhGF_U9lpz7M8IDmF","1ZZM2D-nf3C6OApA0gOXEfJ1Wu6Elj7Te","1oHA97um6idtjQIVzXwR2xu0R_pKf41GY","1yQcqoLWdf7Gxoc8fhcjbf9Pstr5jcsSd","1gyqsCQPVozwTdv4ihPsdn0tfKimybCrw","1SYYwgcnmlAXbSLybXE3zvJRy2rkG4Zsj","1BR-23uTX4fiwdMZ9cZv2GVWlJY56dFNx","1Y1V_4MvCgYbbsJEEG__lw4o-bIWi7_5H","1SbVpDhLDlq7j3GDQDo4IuuUcHCrT10YJ","19A-HgpvcxB0gd4FPl5ywBDwTCXRqiN5V","1epaHdHYf9O9LsqN4-2ZuV_A6wRS6npzz","1j_CBYFxMotztwaUWX4yJSygCKbqzUNoV","1QtdCaS_gebfU6dkN4GnRcRDjFQNWCGKF","1PwFuue9Ok8OJPribUrjpO5KHcBgEGauc","1mlic4SRFyI9VNi4PK0qPsMiS4XdIER39","1xFhRKGBrBnpphlAgSD7ZDSb5HKhsHi-4","1ghqBOcctU5YYRvsZfyGszHfMgxQPAQFt","1JFZu-OWVahUSBSGe5UBrM7scrsnfHwnZ","1J1O6acX9b6ck9-Rcd-mO1v8P-_XQv0lh","18S-WO47WV5JBFWTPWY7nD5sQApQX3Al4","1EXcg4rQwcyYxhVqtv6sW-apg-evA5cOy","1e4MywBYTa5NyIqLByKD1OxmptKEPRXNt","1bgTTBhPPL4dd1ixRBNybqAcwqK2oISE_","1gaJPyhT20tKaT4b_3qn17uaGgRkJDdfm","1BlKrR-dWy0lVv4jhgy7PzbgeARWsGCN5","17vREmjC-Ku6jNx2t3fjO57KrwkYSC8Tj","1zNdQHL-wOvHXSpCiDepzjhL3uEgvy-8Y","1-I3KbXm5OgWgRgyQ20FGzWA7gH1I7Wdw","1XQSVBvF0dXXQq876IxkYa0K1qC4rjMRJ","1aAPA4FcuVMFIsxKinooiWNEwiiGTWvni","1RoTeTcBkVjou-KXkH_8o76UK1LVTUaEg","1L9-xqPoWh3SIF-Q8bAL-GI_LjmTOismK","1A12jORm31z8OMkVEjYJYCb5Tgw0JtUyK","18_2lR3Yihm9m6fNcJ24x0qyurX9dasuR","1oMuOsgWxHO9JpOSXS2_69-FDnwGDk_1P","1aykQWrWmNzvnKPcmejBXGYfJ6zDulz_r","1oynWkMrpW57SOpxn7xAw6LdB_nfv6RZb"]},{"slug":"kenge-students","title":"Kenge Students","group":"Kenge","ids":["1YikCQ1ezw5G1CgDLNFRGQ1Z2n0Xbc1er","1Lofwx9DhBZMLi_UuOEJWBa-PUpajY89k","1sp8LsZTVXOnNNraDudojJ33qavDBw37f","106XfiIY9G00_yaKVMQHrnyDlUTfbpkj_","147bLYPjc_ZobJPpDFM8V18LpEQihky9m","1j4roJ1DxaHAg-hL6xJKMdXraT04Bbjb2","1wNPMwNnHsmV8Y_g8T29-N7wmtzuBLxed","15GFrqToTgbu7B-YXpG8AfryPXFjwn9hv","1zfrA2RPIy5R5PtRUEotekVNhE8HWTRbY","1pyEGNjk2ZegClSR9fwIpCPwF7rNxbkZb","1fYQ1wuXuQ7K9jBN-uJ3gkgLoj_gHmLVY","1Y-C3H46fnrpBUPm8rCe8SCgJ9QN4JMLs","18F_bbwCn-tsglLuw7teq6s6Ed7Qxg2qU","1n_VLj5lgUHJLbeHLe62lw4t56RCB4hzN","1Yt41ye4Er4Qz-FLIMFWyIBKAl3eRp6ZD","1O_sHmPz6jB5twg4OSBN7GK7X8T6sTOBc","1snPfmiPchUcjffEAFgvOc1JFNmLrEH64","1dkyQo1rS4S-M6jkVhhIrDHCzaIl8re2W","1M3zXLbs-XVHY09L5dk7Rwyk71GW3CrHr","1qgekI7h4Aa7cxO9tihwhqLbTGpmH6K5L","1jXBxe28n2Km9NI87kSvsl6cYSItdantx","1PGFGgfFytKSzt0Ko68qWCYH4nqMfYAWF","1yZT9dNn1MAN4rlwpXCdlC7Po-U3OVkTN","1Rzrf2wBljc_wk8WCfkHYdmhTZCyEXPqq","1za-HgrYmSpVcIvlinjRnXMTmqwy6Xu3l","1tlul0_7flVbwGCW0DCWYtkEvMEXoehIq","11NgkeE_UUv6VjEde4SCyy6QqkGYzTlhV","1YY0iG77y-s56sYbLAyoPZFXCG4y7VGfz","11LV1G7cUKnQzehDzAD11hiwyuzvll-u4","1tWJLxNPssAXWg1q2yLMxR2lhvIGU4eQi","1hEGUFgjR9_8trhyh0tEnBxplty5pS7D8","1xT4hjllW6r9GzGLeMajY6Bcr0E2Qvfur","1MpdpvuafUW2Dj95F9Wfq_Nq8iufIf7Ia","1MoFBpsadDFJyojQnEGgj0qqDIb5d9zzz","1QSX6w4sb6tumWYDz2k2p1QLLbEKdGpEv","1TQcxr3ozzaLfWgriohxZNRcVjjYeTLrP","1gnJeBxuFCf2O5OMTk3mE9BnuAr6BaBIv","1n3lHwD9sEVBjfZprMh-2xtexsWsNXryj","1ovaMjvBETyhyhjeYfAAy0Q0BaHjj3Ku9","12N1RMQCEa-ltR0qHTXWbG7-iezqZitbg","1MTu0MXAAjqf-4MdNN2RzHq8kTJnrf9Zi","1Nn0B-ZAs9xJO6ggBj9nl8b8z-0vWXebW","1hRggh1iGyJ24n98HY445ABRb73SyTdLj","1vP-FHxwKuhP2nx80tcXHPC6Rb6-kynp2","1n6JYhub_Euy1T9Y1djH7XzNHR7JjocC2","1CEahBN_5LSkyEctnZeBppYAsmquAx-ED","1Gij81gFfdxeD5VGu-omfaw8xuzevnmc4","187IbQpg1mJoP-TS6w7vxxNpT-XH1ltSf","1gSfOluuWsFYuwMsroMupfhnIOk5Zy_nO","1gCHPqRDhqCOIyh0xv-FouSFfxRusTY6u","12FwSTbFRptjouzw2anazFMlWhf9JU0SJ","1raMHc9hPgRm9pQihw5isc-6enE2NvLro","1fvcQ-pKpPvtpAPza6U57u1cwKyxN49YZ","19_nNvpSa59ok6QID6zzc0tm9SHxAoXCt","1LqU6FvWKFNoWOf0otolGSdISu0BjHOAk","1yhdFBfjo15CMzrqWQaXIEJHFk0dq2ghU","1VvAqlpByAk3-dtwS9HG1BS26FVejQ-Ql","1ib0rJ1LYJQ1VFr0YhklW6T13MuA66ATz","11dJOJQ0f7RybYPABzorZ3sIbcfpcAbo7"]},{"slug":"corporate-photos","title":"Corporate Photos","group":"Corporate","ids":["1MsgzI_SzwrMU48s_PgvQ0byws8mMPSVo","17FFvGeIVpl8zX_xCRNnzN5gLkt95xRuO","1JBaYxG2N0UTM4tHcF6lVnpYcQoun33zR","1oh4QuL-0UgB7soxcOwD9Uugp7MotoEc7","1x3mDLSifiE9_exGmDu2nI-rek-nWzYp8","1f5DT_3o9T7W_59X_dRdvVbuETDjEuLSg","17-qAbHrCHHW0KS_gQ4-nx8Ui2E0iUdT0","1gUsCj_T5TNmg8owbvBVTf_kU48Jz8m-0","1ctj2yDMydgeNiCdohITxsdy5Gll784Rn","1Vmu7EpKd0HOyVEqRg6Amc9RLVAWA5t4p","1T8SEyYXkXDNqx99MT1D-anBPwl4PkdGd","1Wubl4sU6j3I2kzg0ihrwFCk57lFFm7pI","1zG3D1MuYyzWTp41fRA954sGVaukd3ElX","1reBIcOiwfGQJWF9akEs8etDB_GbnTCMA","167oA5K7J1AFARrmf9tkVHgNC7d0PvCEJ","1GyQoIlTys6T0hY0ycVYMBJ4agmJCq6ce","16o4AchcAK57fEcTpfo7asY2lP3oyJbUI","1dO3alLRmLWHRpoFLcp8gL6lcJnhY0eRP","1wYNlEL0dS3s8tBrECyOj0edrYK_7yW3B","1QWBu9FGCa9U2uByTNqvePW10qNvqZ5X8","1GSZF3VaJrpXmBv6USb6AiOktJFXI6i0n","1bD6VcSeKUWgp699XzdCLQqvbuzjvrBvu","1G_Mcp_Ljrte_dQ1SGHNZPqYpyD53h60z","1sDT_ir0Jzey4DLqmfMEKbKAFfQbnCBz4","18OdkiCEKhQ48vqNtHOGqIAGWtoK5RysE","1olzbiLbzfSln9Gt6fpvxQJ1DdggUALUn","1yr4u9sGb4wMCFGab57VGiZFrayULFwVI","1E2-hL8xtea03WNp5JzrgtFrXzigT7ELt","1ICxzIbfPG5ZaokmaUOkV-hMTS5ipO7an","1UCIckW3d0gzBtfB8PMtKn3SebHPGav4q","1Q0rzeIk1YelIY-l_AEczkDR-k7wI1sZi","1wZ4TUWiKSRjMe2p-SFRHpMxY0AiNbR2R","1W43SURgyqc-H0H3yYxil3sDFkaOG1_Et","1Ojvfjtg_CSzjb8gLoPZyrZNMEWXKgaUT","1Ndcuvw1kh2wj-glbasj3PCOk6vsZq5sR","1af8mYhIErwGrpNbvMO1rDBz8A7kgbSJW","1MfVYNVWAN-CY1fna87ohXIohKisiJFdW","1cRtW3Oxt8vJfpydZ5CsQ0_f2kjSX6JLE","12toiWKlsEe7dec0fts_11x6cin124_gH","1UEoApjvPfhZ13h7bmnYCO0UHl-iXgEpE","1YqrGTHE24np9Rz8Sub9T5_zhZcqGjInr","16p-Tfc6r6LUDiatCo5qe2OyxhCSqrw67","1UXl5Yoa1C9bz5HKEJcHFLxFCeMBnDx7g","1Kd72TQ_MVu3oNuw6LbcO6XJKNe80Gavg","1SMaSlGvTnsXz7tzXxUyUt-gLURP3I6Hm","1muTIBkIiGwsooetpVwlqh1N1Sc-byZLJ","1qBrIUoPfUpiJwrcVCy_tvHHF_4PRzhB1","1tniSt2WN_r1pvizHfrtRO0tolTryo1oP","1CzlDjDd9AKZdVWTZhru5aWyU1OvFRSr7","1iBN3SqyBy9zz3b3beiXv8qXRasnFat5q","1W7cgo7j7-aDTaSyYhViTBHV6CvJCtb_a"]},{"slug":"truck","title":"Truck","group":"Fleet","ids":["1tXPj2OGGjMrReWP1MvkgooA1zv0lhbrp","1JO1tp6_JG4lXtagtiUT_zkFgIWUkJ3dK","1Gd-YpNmAL7urLh--e7iF_p95_NcaU4Sc","1Mky3T0mSxnOdvLkWR-tN3BnNc9v95Y7p","1QCmtM2VmKhcO18eCYAwOyZHrhbDN6tJ9","1eBNxrH6PEWvGLulw4bztLM6aKo0pdp4d","17Crdo-x2_sA3ZO0kFq5T__qJ8tVz-zb-","1bLQoNVbjaedMjvwzvLIVQH8fJdGKc2du","16bzb6E5T4wdu6m6yD2z02tihv8Je8_8l","10mwglYo245LDb3Ch-EWZxhvvQqL8nOuB"]},{"slug":"css-building","title":"CSS Building","group":"Offices","ids":["1zeWxTk5UTUJPw4qVN6ze7nAS9oOmS1FO","1Mi92vTgJZUEhdjf81j4O6R9nZ6IXR_UL","13EVYUP_ZJ3W-n2V7OzpH9jYRpWVFOoP2"]}],"videos":[{"id":"1zI3tVvEWlYa6xF2QuKdqf3keFTrANHPT","title":"KENGE process video","project":"kenge"}],"projects":[{"slug":"kenge","title":"KENGE Workwear","tag":"Training","desc":{"en":"Local tailoring and PPE sewing training, from the factory floor to the students.","fr":"Formation locale en couture et confection d'EPI, de l'usine aux \u00e9tudiants."},"albums":["kenge-factory","kenge-students"],"videos":["1zI3tVvEWlYa6xF2QuKdqf3keFTrANHPT"]}],"documents":[],"templates":[],"brand":{"pdf":"1qFNT5HbcTG-cnM_EL_HFMnSbvJtUrZWf","families":[{"key":"horizontal","label":{"en":"Horizontal","fr":"Horizontal"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1sUEuUNXitRaOgmVHSLKvF3pnSt4Fz6gE","png":"1P5b2JlrPtmWFIDtuWkzG13Rdo_vvx009","jpg":"1mbNTVnae28KzrslC0YZv3L8tRg7887aE"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1VnjT3pKkDe5S8fyDFfb0BHWGYi-UyWiJ","png":"1Xac_hIRq5jXDPJ5Oj4VNpLamicjpzGJ9","jpg":"1MzpVkKh5JKqYpGjTyHWpUTzawKM_J2rM"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1acso-5qeKzwnQOmrmL9m0YeP5_-h6tlh","png":"1FJq3ZlCBz6WZWTzPP5zoL1MNtqPaZ3vY","jpg":"1xPfzwJst9U8iON9gU3Nvn7AbK5JiAqkf"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1UDQOcbHPk25zHFdaQfEQCedXAmllNke_","png":"1J9E8czOK3EQ8IbfDjibCGNz2uLsFb83z","jpg":"1a0zjLLSO_Qn7DlUs-mKIyyfRIMrdFM2R"}]},{"key":"stacked","label":{"en":"Stacked","fr":"Vertical"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1rqpuq6dNotRys_OQRahrqcvVgEjmAjsb","png":"1s8fQmoOTdOF2U3ibi_MbUZ74i2Q9fxmw","jpg":"1JVzgrFinaNVEhrJn0Gna1NyuzJiSmYfW"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1imxCAS_9WFNPTV60d0UayJfiD8ltRMKa","png":"1URWjKUbA5LMkIo2A2dGB-mKxPWvJr8VU","jpg":"1yyUlNJfcocaYr2Wdgl7yCCrRQZuNARBp"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1Y8jr5nQqFJi_dBRNDXRRiiYsaRBb59Cw","png":"1_5oALW0dKaQYuOYt1UUD1bpsgjEmLBg3","jpg":"1BiIqS1hpGR3M7Z1vO5Q0CQ5_YCHQaDYJ"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1zv1YZ0TOa4qIJgk93l4edIK9a-bZXehZ","png":"1UCKsHivC94BhW0FHKEANYTNzD8kjKmfh","jpg":"1PSwCOJWVwhnQw7R2Y6CcvQSF9vL0NB7r"}]},{"key":"symbol","label":{"en":"Symbol","fr":"Symbole"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1Fi8nx1ZYwjzClauw0rrah0LSE0Viu1Od","png":"1jDTxjb5OUBwKUNJr0MNmUI9o7qvAjMZy","jpg":"12W5U_6mMI2zo7EP_LV-HImOJ2d11-Moe"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1fTMeunFBF1fFoVTIdL-VR0aPO20y_l-4","png":"1W1F-IZpD7lfAej4a598cOvmb4sHe9lGt","jpg":"1eBAhatW0-T1C6WZzKMGxiABnJMa4gdxi"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1JtKrCe5u-ecl8Io1FZtiDj9ZTuQ3xB4z","png":"1iZfASljJzbsQgxLKO07TnZl8yB5zBWnf","jpg":"1RINSRsDdKGXAMrVG1p7H7KKD8JDlQsVP"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1UaylA5ibN-p8Kbg1upt8PzC0f4F9lJCn","png":"1vpOPXPnfkp8jaXAinWo9c-0ZRQ_hcutT","jpg":"1YoFLoK8q9rvaavCbTcAekfzwWa2RgvTg"}]},{"key":"badge","label":{"en":"Badge","fr":"Badge"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1DlJCLe0YRP26eicSCeZpFafGRS-owziF","png":"1u4uZIZLdZbdOoLkxVKhJT7QUhDRjVYO3","jpg":"1FAv_n6y4czRCMOxpbTi0GKz4y5W3i3qm"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1IHFnVgIg69puQQkKySoGY2_VQmnqvvPx","png":"19Sf0bDk9A85BgqUoYilO29wQoKQQ6KFL","jpg":"1fJt0h0bzraaVu2Y3oO3yVgOsn-BkRxl6"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1FqhkQprwatS75FX_3SAng3AnqJlpmlWV","png":"1KteXZDwQm7HM7HqHdCT9ytIEeUOKgVYn","jpg":"1n4hvBXzzlSbShRdMSnJs37dIkcpHDbTU"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1mpnoMv3_WMQPTeUmJBiK2alpNWU7ZRVj","png":null,"jpg":"1mXHl4WJ5msLn6JwjJAhx7fJkQCArbqRj"}]}]},"products":[],"directory":[],"procedures":[]};
+const DATA = {"albums":[{"slug":"kenge-factory","title":"Kenge Factory","group":"Kenge","ids":["1Hy9LXb-TogBPR8uweVgcWgmKrKPvFN9K","15qMck7TpQJfEO-sgDDLOhQS0h9-lkpSs","1-qZk9CYbv49_W6KZlp3FbftrDd_d55AN","1sYgzIjwfFeAlCnbllZZo4je1h1aDcRl2","1XV_BG-lzdT0Fs2SSK1_o-m8386FMzBYD","1UH0HVG23ar93b-amlZomLQgs5BPrG-mR","1f9SKy2_-sK69JQwmYnkLjgBdl1ewXgmt","1pCsS_ExYoC6c4AaO6CwHTaMvC55kump1","1sIKfRV5sKhVmIleXRFOf0IkP8UVusW3Y","1R2EHa5JFTwVY_RbV7eREpZciuu5xOOiu","1Vf7GxfVVaGjG4hlh1rAe8BGIqlTEnNAT","1jxWxuQSqVGtqXRhxfdYDVcS3SuA8BR1a","1RR7uRJHTWk7UUvQrqCuqwjjh9oGQNFSk","1niq7NeLtiN1fkmotra435vV6jC97AOKC","1VXnuwhspGeNONHhJ8DtWP0yW-7LOuRHp","1wBIOlwj5F8-yDTur5-ZQCzlrly5hGRSz","1avBOzRh4IjZOORK8zze09kMCyok5wY0K","1vNRBCjev72SNi7xMFJFbyKNlDo02VQbH","1BnRdsqBVvvxrdZnIcraGVKh-27LUFT8Y","1ojnLsQdahAbzBxGYu1WfoIWn1qULeFGU","1GyL_uVOMKYO-ERi_QL7B_smAAsfrW8NZ","1HAIcHVl5BH9oIScltkLNsgbwZFDlrUN_","1Wuo4CM2AmoyuuBOIygWtup3nbBxtQxmE","1tyPKl__vjXFHI8qCWsNm5O0reqKHu_Fr","1GjcX1ieSjS2NnyENI9vRDR4xRA0Ihxdy","1qPa5JbS3RiRS3W_zaeuhSW9AMcoSfR-2","1WrNWgQagRhCnJNwhyucJtfwtUKqrPy4p","1T_tCZBe9XOmcmEs2tOPZPcKtXbo0DXq2","1KzvM_F4ZvUbU8KxqycKkpYmp1-WSbSj9","1kdxgFy0VlqV9HfWRNhYb6X07ATPs3ONt","1DQyzain5n-0YFHD0jc1jxo8V0hAIAuWM","1WcG6Xh0iiKQl1BCpToE5hlQgZzSvY1ul","1t5PW_bhMpYlxKJ-1QM5lTSzBx2UZbN5v","1rAmmc2HUJYItj-xB-K5P1Kqf-Y3D8u0y","11fZpjNw7aX-oWbhKTIeCD4BFNaFQ65xc","1g9wOTiDklBNHNv1hcOUaCy5zM6Z9k6jB","10y0R3Y0hemH0LMMFrswHe4Lnmj39SbcA","1_ILRRuBCEKL5WjMo3oOnZI_kuPM4yZP7","1qrFWwDzrEtb713alj_uU1TGXYoo-OiV2","10EN6552hvHhPaCMB7M9cQi_0CYmcnzIJ","1WXYqWCmsacUPvzmlIEV3dfvvbT5rzhOx","1dwXcjQl24x7S3-p6WvDkwuH9FoSxudpi","1cmkTSaVlzZKwGw_mmMsnMUf5VUW56DDr","1aXiq9s-yEpumD2KgSn05MBUTZtt0v_Kj","1evbuQv84CMIU8XMPk8zPrDLwV_j6731d","1iPR2RUcE4693sr2faHfMAKWd1mziBRyp","1EmQYRa-ExefuOJP-HeVbsc_J5SLtix21","1E7FIPjcIBbZB1Np3cWtw37S-osKdpZPX","1XUf0RImblxw4s3XeNGzvlRntOiTWFNOG","1bZbopNG0ZuNYxcZcDan5y1ZxtxsXXZnV","1iA3QagyQM5I_4FtnvXW1Mtz_OgaiE_EE","1KFlKDAls8eoANB7QWAy0XuzmaJjl1RsS","17EEtripGADQNJXgiszxKyDOr5ZHWADiL","1-saqnQWP4NrgiL-YZ_tjc_CG-gdpya8o","15bBgcffALYLhAKy3yCi1L_3ZxfsqRtGL","1MlbCbZROo1evqrfQnD0bLy5Q7isrKlE5","1sfZrzdlLHV1KfBL9b-zqbz2ZrKNyX77C","1T86irjdid5UE8CjvjKsmWCmkj0Ag38m2","1hU92bWiNraRoRt-36PF5hkv120zec4v6","1vDkJY4Ys4VY0OUunN_lSEXHBnvRJMguF","1Tk33G7lTVuFV8LKTOqS0egE76CCNM5Jl","1AbgFQGMlO1J4fsRmirBemOElOCwNYB5-","1nEDY5XKPg-aTuXjHHUSS22xT3RmBPkk-","1i5_kQCTMx1L9svPd100Pj5b759AL-4jK","15-qNGZdbNa25cxkeOTV9DPS9YE_4kNpx","1F-r33TLQWkxxDlHgTibUQ1AX-yji0NBU","10WhI84fGvI1q9t0J-Iz6DWudAotbgHmZ","1_rR1eUzafc3MCAcbG8J_BJqL4wprHTVn","1JQ4JdO9li2FNs5lqGk8mGX7jjekbmDFn","1jVdcyB3ILGzdgG2uS3Ia1vgGSsdZJi2T","1xPTbTJx9snEynLl3NmjtNgO1pW5BqR3W","1iZ8pWa9mCLZrCWD4_uOdurtx0FI6mtml","12WBfLlO2Ub4Jcg2wLp_gkfE7Uzhujgkh","1pKzpFp3u05FvORQqqB-0cXaxRR3dO9e7","1u589fg_ViYUYtK_ySzmtLCrjdtjGu2hL","1l3qjNXBuIcJo9FiWs6Q7RcrXEqMJ6X8m","1srG052oN_kAifWHRmKqRxGINwush43zg","1ra_xVTAQoHVLO8yHJxe03fpM6iZYjfVh","19cBT-pMKAeRuNroF6srG_uaM3HGHYMQG","1jU4vb6H4p_efhKfkcO-FOxGk54vq8fXy","1G-eRQFSwZoFvC-Zx12PXnV0wC0QLr-NT","1LIuWwuVp02GAF8OaXm2LLo3Ht5EwjUC1","1aFRAqo6-TFsBGJUp795G2_a_COYYkRg2","17q4w4Tu7DGVqn_bHJHAyaLlYneKdLGN4","1y8CClS94R2MadYm4rN5v8N6bqCNl8MF7","1hOl8HRuVDaVV_MySpCi7maEfhliIEQSH","12YauLe_nP_aJncnrz15aqTTrgWTEjVBG","15BN03bYafpqVfbmCo1jsHwfPKMCfI1CI","1Jp1sUItqF5V2V1Wi4TB7D4-2Silz9cG-","1eDCDsR50hU_rG0ZfGmsgXiTQikdgnzcn","1m1Uk5tUhRKi67uLGsmMfDY7A6LK3v7Ao","1SHJ4Dbm6W8JYYl16kItZZCCbBpJQ86VN","1FIEN-PcgHhqaGVRQXuzJqixHxJdPF7Rc","1cp37wEVP2p4pgmrf30gB0JdQwUtAEVq7","1vSXEwCh0t5HW_cZcqyal2SKN7H8uMRLJ","1XeC0whOtFgRKfXouF7iNs3PE395WGjis","1kf2byb20lp4h8IRy1KqqZLF0NAv5QWr5","1XpunOJxOrz3iBw2q1aoRTfnkc9emTJLK","1RXZyZ447DTKvYsCFqMmdDIpif4dogalK","119OJuNIUVCfHWlL3DYCV1NDDA1ZA-KXT","19v8_a_WD7QLT47pKKRy_q92KDyz4jxCl","1ucN1e1PSb1zhgeloe6vp0khYOsGZleBF","1Pgp6TjvkOJagtSAulWixgpTr0xzo6CWz","10Gy2ycYyub3ZC8wqEaBp7qnLJbWsF5yY","10LUDqfSMWl06FAsGtz7HdcQVMF5JYiqw","1IVW-Y4X6HhVyWc8ZKGXtBCK7Xmj8TUrM","1Np7deeGziyBEcfXfrKJrDdWzr6cf1i-x","1ggJAx-3EGCjrnOrekUk2z0oebY4xrs_G","1oYAJoNiUwySf7sOrMaThLB01AOaoR-tu","1UbGgYWIwTtQ39VchAp5SFC4Yjs7B7Pij","1uzEspAhvcAJGPUbbszJkKt50n81q3Kt0","14WL-su2yn9w5s_35lXzGO12sk-CEpM_7","1rrRik36lqb-lGjixGalVXFdK5YK27Dzr","1EyRJ9YdzMoyPA7hTiC8ol-kuPzX8Si4z","14J3c-1VD7sHxA6KK_yzEOWdvtqqDWK8x","1q0GvVH0KqYmrfiGBTgKdzkQuRCWdb1uK","1RpB0gQePIleci-QAuLjTcfAb7IZ1fiCF","1G6WwKNxtfvR4Rg8NebiBt3CKGHVDpsWY","1nw7DeX5G3HnMdG0MhtE0Pn7KpkgYcPzO","14R7ucXDeFG_kHx2guknU_Ndu5fOzBFfX","1VvoC7Xvit65ef-aHYFVos9IYDdkEDa0U","1KMh20CaN0ThDJBMuu4ZiazGde4MEa5mL","1TcOGeER_LCo7kapdN99O2d7OK73DXp-a","1U27PMIyKLKLekAGRGGkNyL2btImMZK_I","1satLh_hjQjHdD_5HNfZ6TEYd6eGDzAih","1_YNYEI8VKRFSw37PzxJ6s43-1suJWops","1rR9SxQt-BRvKYBvbuqAzdxSAZ7FUP0L0","1Xgqqx5IqyIhGFN-83U1MPuJxpSTBKD9H","1CTdnIAqKUY9W2ZlqQMk0uWUlpY-Ce2o2","1UhuPTE6lsMAtzAql_T2LnUIZP9aujDGN","1QeJ_YGylWKn888FTOzmNVKMPqCWIY1-d","1h9Y-PhDawmPvcZWzP3JPM3ALdrs3ONjX","1_-ipP5HgBdmAAlO-aYj7yFz-zk0CCpgf","1VWOV1_5qMu8zjYbb23vTU9FqJMkUo_-S","1Y_yCt9Ad3zxt_z-9CI3Tu7_gTGCnCwOr","1PhUZf7iv1z58PcLJoVOQnqenX71o0xiD","1AaxtTlBkFJxcJ7kprB11XjMqCoVoi0rv","1XGnEcvc2pddoCWzV63KLYvtjif46pMiV","1VHog-szQzl7cZySPMpB5qswIuID6iUqZ","1IW3l7r8d1G_6M4tI7aK_Lvg8vU7uo1_b","1xn0pwfog2KspKAAGfjHUSaHYYskI0jlk","14IjKH4h1efjFVU5-EoRbZJdZrkXcS40k","10zFgoN_JuZcDWOf5XN8-kNQvUPTpBMFx","1e9ekO_B15rX_ZjTs1vEmxrv_G_9641xv","1um90UOdtnND8nnM2CuJhmnKc4p_VJBwX","1381RuTSD8p4_YhtooFAyCVZoAJiQbdpz","1NCWMMy_76JPNjng0fC4MwF7-jzI9WQ8S","12H7iRLISjHE5sTnlE3E1rLEKDZg3Sw2h","1cezQ0csSr7EyRDcJjTeR6tKMdwFwANTr","1y1-L2vwYwmnPwTWZmCsPFspShPo2tTYI","14NJPONsBrSBv9j1U8BElYMvMyUybA9Fq","1fq0YhhJu08aqWs1hlrEhlGYcch9ugQw-","1quVDEBlTVGtCY2WNPJwynz379vuNVjpk","1po1CpM9cw3IpbIkzcAmaXQaQmB6kOC6G","1aOeZU9bw5P-lqyE5gVb2KfbQrRz-8hBy","1Qm8KcZti4GpFD-s6dBWlQQIkNRLEng1p","1TqJEVxBGLIvoMl6gX6oOj1XbfBOAoI8F","1d7-4R4Fy_isHPiyw9LiLLH2LCy9sSL6_","1ClwKQkeoFBHjSwaarJdbhEkjNo82xxnd","1JEVhnjbuIDZANN3UFPmpvM6kOB3tskfG","1lUie0tN5x7mdsCHT-4XZfeMk2-VJjZA3","1Zh2bscNmn-xG21mVYUlnIYyf12buuVHw","1USa4I2iGr7GwJPLRcncf09eX0Yii-lWU","1DUzWLICNeA6JaYpwcXlq3P0B2-tG9ubx","1CxzWTVKDI_HEPACRBhUp05ocZ0gH5Mc8","1vGpxgrVkZu5LOEoql1skpBQMnRvRdNkd","15SQFaQSGVLGgiChveZxQ3reSQxfayJZa","1RBmYGXCrZQCo8yidnZSoijALD4WeyWHG","1vor6_PVe9pH4XsrDF5wq0E2teOQtbXJ8","1JsYZd6k-4FhC7mK0jSmp7SbwS7AsmCs9","1e9fWjmG59n8JL1rugPM2CTdrqd8Olix4","1lotGoSCmuLhZMIV1thCfcM9SNIg-gCbk","1l6q09XPvvGadARPD7PO9Hw7gNsIDuLAL","1Eg61UEZj-gAHPx2EdeDSwJ4bw47dsmlo","1N8C-j9HoG5L5u9waMtTd5umrOvS-0kEy","1_J9o7FNuVoShlCvPRzMPmu8x-1FjhYUu","1cr9Sj13UfwiWR_ggfXgXvvs9exCl0w-A","1pXsY70XiAKd7mGeQvTxX1F4t2hbqIeqp","1dKqyDesoV3VIk5bHaRY7szLEwtxAssYo","153wSZApt8r7IxnAvhGF_U9lpz7M8IDmF","1ZZM2D-nf3C6OApA0gOXEfJ1Wu6Elj7Te","1oHA97um6idtjQIVzXwR2xu0R_pKf41GY","1yQcqoLWdf7Gxoc8fhcjbf9Pstr5jcsSd","1gyqsCQPVozwTdv4ihPsdn0tfKimybCrw","1SYYwgcnmlAXbSLybXE3zvJRy2rkG4Zsj","1BR-23uTX4fiwdMZ9cZv2GVWlJY56dFNx","1Y1V_4MvCgYbbsJEEG__lw4o-bIWi7_5H","1SbVpDhLDlq7j3GDQDo4IuuUcHCrT10YJ","19A-HgpvcxB0gd4FPl5ywBDwTCXRqiN5V","1epaHdHYf9O9LsqN4-2ZuV_A6wRS6npzz","1j_CBYFxMotztwaUWX4yJSygCKbqzUNoV","1QtdCaS_gebfU6dkN4GnRcRDjFQNWCGKF","1PwFuue9Ok8OJPribUrjpO5KHcBgEGauc","1mlic4SRFyI9VNi4PK0qPsMiS4XdIER39","1xFhRKGBrBnpphlAgSD7ZDSb5HKhsHi-4","1ghqBOcctU5YYRvsZfyGszHfMgxQPAQFt","1JFZu-OWVahUSBSGe5UBrM7scrsnfHwnZ","1J1O6acX9b6ck9-Rcd-mO1v8P-_XQv0lh","18S-WO47WV5JBFWTPWY7nD5sQApQX3Al4","1EXcg4rQwcyYxhVqtv6sW-apg-evA5cOy","1e4MywBYTa5NyIqLByKD1OxmptKEPRXNt","1bgTTBhPPL4dd1ixRBNybqAcwqK2oISE_","1gaJPyhT20tKaT4b_3qn17uaGgRkJDdfm","1BlKrR-dWy0lVv4jhgy7PzbgeARWsGCN5","17vREmjC-Ku6jNx2t3fjO57KrwkYSC8Tj","1zNdQHL-wOvHXSpCiDepzjhL3uEgvy-8Y","1-I3KbXm5OgWgRgyQ20FGzWA7gH1I7Wdw","1XQSVBvF0dXXQq876IxkYa0K1qC4rjMRJ","1aAPA4FcuVMFIsxKinooiWNEwiiGTWvni","1RoTeTcBkVjou-KXkH_8o76UK1LVTUaEg","1L9-xqPoWh3SIF-Q8bAL-GI_LjmTOismK","1A12jORm31z8OMkVEjYJYCb5Tgw0JtUyK","18_2lR3Yihm9m6fNcJ24x0qyurX9dasuR","1oMuOsgWxHO9JpOSXS2_69-FDnwGDk_1P","1aykQWrWmNzvnKPcmejBXGYfJ6zDulz_r","1oynWkMrpW57SOpxn7xAw6LdB_nfv6RZb"],"cover":"1sYgzIjwfFeAlCnbllZZo4je1h1aDcRl2"},{"slug":"kenge-students","title":"Kenge Students","group":"Kenge","ids":["1YikCQ1ezw5G1CgDLNFRGQ1Z2n0Xbc1er","1Lofwx9DhBZMLi_UuOEJWBa-PUpajY89k","1sp8LsZTVXOnNNraDudojJ33qavDBw37f","106XfiIY9G00_yaKVMQHrnyDlUTfbpkj_","147bLYPjc_ZobJPpDFM8V18LpEQihky9m","1j4roJ1DxaHAg-hL6xJKMdXraT04Bbjb2","1wNPMwNnHsmV8Y_g8T29-N7wmtzuBLxed","15GFrqToTgbu7B-YXpG8AfryPXFjwn9hv","1zfrA2RPIy5R5PtRUEotekVNhE8HWTRbY","1pyEGNjk2ZegClSR9fwIpCPwF7rNxbkZb","1fYQ1wuXuQ7K9jBN-uJ3gkgLoj_gHmLVY","1Y-C3H46fnrpBUPm8rCe8SCgJ9QN4JMLs","18F_bbwCn-tsglLuw7teq6s6Ed7Qxg2qU","1n_VLj5lgUHJLbeHLe62lw4t56RCB4hzN","1Yt41ye4Er4Qz-FLIMFWyIBKAl3eRp6ZD","1O_sHmPz6jB5twg4OSBN7GK7X8T6sTOBc","1snPfmiPchUcjffEAFgvOc1JFNmLrEH64","1dkyQo1rS4S-M6jkVhhIrDHCzaIl8re2W","1M3zXLbs-XVHY09L5dk7Rwyk71GW3CrHr","1qgekI7h4Aa7cxO9tihwhqLbTGpmH6K5L","1jXBxe28n2Km9NI87kSvsl6cYSItdantx","1PGFGgfFytKSzt0Ko68qWCYH4nqMfYAWF","1yZT9dNn1MAN4rlwpXCdlC7Po-U3OVkTN","1Rzrf2wBljc_wk8WCfkHYdmhTZCyEXPqq","1za-HgrYmSpVcIvlinjRnXMTmqwy6Xu3l","1tlul0_7flVbwGCW0DCWYtkEvMEXoehIq","11NgkeE_UUv6VjEde4SCyy6QqkGYzTlhV","1YY0iG77y-s56sYbLAyoPZFXCG4y7VGfz","11LV1G7cUKnQzehDzAD11hiwyuzvll-u4","1tWJLxNPssAXWg1q2yLMxR2lhvIGU4eQi","1hEGUFgjR9_8trhyh0tEnBxplty5pS7D8","1xT4hjllW6r9GzGLeMajY6Bcr0E2Qvfur","1MpdpvuafUW2Dj95F9Wfq_Nq8iufIf7Ia","1MoFBpsadDFJyojQnEGgj0qqDIb5d9zzz","1QSX6w4sb6tumWYDz2k2p1QLLbEKdGpEv","1TQcxr3ozzaLfWgriohxZNRcVjjYeTLrP","1gnJeBxuFCf2O5OMTk3mE9BnuAr6BaBIv","1n3lHwD9sEVBjfZprMh-2xtexsWsNXryj","1ovaMjvBETyhyhjeYfAAy0Q0BaHjj3Ku9","12N1RMQCEa-ltR0qHTXWbG7-iezqZitbg","1MTu0MXAAjqf-4MdNN2RzHq8kTJnrf9Zi","1Nn0B-ZAs9xJO6ggBj9nl8b8z-0vWXebW","1hRggh1iGyJ24n98HY445ABRb73SyTdLj","1vP-FHxwKuhP2nx80tcXHPC6Rb6-kynp2","1n6JYhub_Euy1T9Y1djH7XzNHR7JjocC2","1CEahBN_5LSkyEctnZeBppYAsmquAx-ED","1Gij81gFfdxeD5VGu-omfaw8xuzevnmc4","187IbQpg1mJoP-TS6w7vxxNpT-XH1ltSf","1gSfOluuWsFYuwMsroMupfhnIOk5Zy_nO","1gCHPqRDhqCOIyh0xv-FouSFfxRusTY6u","12FwSTbFRptjouzw2anazFMlWhf9JU0SJ","1raMHc9hPgRm9pQihw5isc-6enE2NvLro","1fvcQ-pKpPvtpAPza6U57u1cwKyxN49YZ","19_nNvpSa59ok6QID6zzc0tm9SHxAoXCt","1LqU6FvWKFNoWOf0otolGSdISu0BjHOAk","1yhdFBfjo15CMzrqWQaXIEJHFk0dq2ghU","1VvAqlpByAk3-dtwS9HG1BS26FVejQ-Ql","1ib0rJ1LYJQ1VFr0YhklW6T13MuA66ATz","11dJOJQ0f7RybYPABzorZ3sIbcfpcAbo7"],"cover":"1YikCQ1ezw5G1CgDLNFRGQ1Z2n0Xbc1er"},{"slug":"corporate-photos","title":"Corporate Photos","group":"Corporate","ids":["1MsgzI_SzwrMU48s_PgvQ0byws8mMPSVo","17FFvGeIVpl8zX_xCRNnzN5gLkt95xRuO","1JBaYxG2N0UTM4tHcF6lVnpYcQoun33zR","1oh4QuL-0UgB7soxcOwD9Uugp7MotoEc7","1x3mDLSifiE9_exGmDu2nI-rek-nWzYp8","1f5DT_3o9T7W_59X_dRdvVbuETDjEuLSg","17-qAbHrCHHW0KS_gQ4-nx8Ui2E0iUdT0","1gUsCj_T5TNmg8owbvBVTf_kU48Jz8m-0","1ctj2yDMydgeNiCdohITxsdy5Gll784Rn","1Vmu7EpKd0HOyVEqRg6Amc9RLVAWA5t4p","1T8SEyYXkXDNqx99MT1D-anBPwl4PkdGd","1Wubl4sU6j3I2kzg0ihrwFCk57lFFm7pI","1zG3D1MuYyzWTp41fRA954sGVaukd3ElX","1reBIcOiwfGQJWF9akEs8etDB_GbnTCMA","167oA5K7J1AFARrmf9tkVHgNC7d0PvCEJ","1GyQoIlTys6T0hY0ycVYMBJ4agmJCq6ce","16o4AchcAK57fEcTpfo7asY2lP3oyJbUI","1dO3alLRmLWHRpoFLcp8gL6lcJnhY0eRP","1wYNlEL0dS3s8tBrECyOj0edrYK_7yW3B","1QWBu9FGCa9U2uByTNqvePW10qNvqZ5X8","1GSZF3VaJrpXmBv6USb6AiOktJFXI6i0n","1bD6VcSeKUWgp699XzdCLQqvbuzjvrBvu","1G_Mcp_Ljrte_dQ1SGHNZPqYpyD53h60z","1sDT_ir0Jzey4DLqmfMEKbKAFfQbnCBz4","18OdkiCEKhQ48vqNtHOGqIAGWtoK5RysE","1olzbiLbzfSln9Gt6fpvxQJ1DdggUALUn","1yr4u9sGb4wMCFGab57VGiZFrayULFwVI","1E2-hL8xtea03WNp5JzrgtFrXzigT7ELt","1ICxzIbfPG5ZaokmaUOkV-hMTS5ipO7an","1UCIckW3d0gzBtfB8PMtKn3SebHPGav4q","1Q0rzeIk1YelIY-l_AEczkDR-k7wI1sZi","1wZ4TUWiKSRjMe2p-SFRHpMxY0AiNbR2R","1W43SURgyqc-H0H3yYxil3sDFkaOG1_Et","1Ojvfjtg_CSzjb8gLoPZyrZNMEWXKgaUT","1Ndcuvw1kh2wj-glbasj3PCOk6vsZq5sR","1af8mYhIErwGrpNbvMO1rDBz8A7kgbSJW","1MfVYNVWAN-CY1fna87ohXIohKisiJFdW","1cRtW3Oxt8vJfpydZ5CsQ0_f2kjSX6JLE","12toiWKlsEe7dec0fts_11x6cin124_gH","1UEoApjvPfhZ13h7bmnYCO0UHl-iXgEpE","1YqrGTHE24np9Rz8Sub9T5_zhZcqGjInr","16p-Tfc6r6LUDiatCo5qe2OyxhCSqrw67","1UXl5Yoa1C9bz5HKEJcHFLxFCeMBnDx7g","1Kd72TQ_MVu3oNuw6LbcO6XJKNe80Gavg","1SMaSlGvTnsXz7tzXxUyUt-gLURP3I6Hm","1muTIBkIiGwsooetpVwlqh1N1Sc-byZLJ","1qBrIUoPfUpiJwrcVCy_tvHHF_4PRzhB1","1tniSt2WN_r1pvizHfrtRO0tolTryo1oP","1CzlDjDd9AKZdVWTZhru5aWyU1OvFRSr7","1iBN3SqyBy9zz3b3beiXv8qXRasnFat5q","1W7cgo7j7-aDTaSyYhViTBHV6CvJCtb_a"],"cover":"1f5DT_3o9T7W_59X_dRdvVbuETDjEuLSg"},{"slug":"truck","title":"Truck","group":"Fleet","ids":["1tXPj2OGGjMrReWP1MvkgooA1zv0lhbrp","1JO1tp6_JG4lXtagtiUT_zkFgIWUkJ3dK","1Gd-YpNmAL7urLh--e7iF_p95_NcaU4Sc","1Mky3T0mSxnOdvLkWR-tN3BnNc9v95Y7p","1QCmtM2VmKhcO18eCYAwOyZHrhbDN6tJ9","1eBNxrH6PEWvGLulw4bztLM6aKo0pdp4d","17Crdo-x2_sA3ZO0kFq5T__qJ8tVz-zb-","1bLQoNVbjaedMjvwzvLIVQH8fJdGKc2du","16bzb6E5T4wdu6m6yD2z02tihv8Je8_8l","10mwglYo245LDb3Ch-EWZxhvvQqL8nOuB"],"cover":"1JO1tp6_JG4lXtagtiUT_zkFgIWUkJ3dK"},{"slug":"css-building","title":"CSS Building","group":"Offices","ids":["1zeWxTk5UTUJPw4qVN6ze7nAS9oOmS1FO","1Mi92vTgJZUEhdjf81j4O6R9nZ6IXR_UL","13EVYUP_ZJ3W-n2V7OzpH9jYRpWVFOoP2"],"cover":"1zeWxTk5UTUJPw4qVN6ze7nAS9oOmS1FO"}],"videos":[{"id":"1zI3tVvEWlYa6xF2QuKdqf3keFTrANHPT","title":"KENGE process video","project":"kenge"}],"projects":[{"slug":"kenge","title":"KENGE Workwear","tag":"Training","desc":{"en":"Local tailoring and PPE sewing training, from the factory floor to the students.","fr":"Formation locale en couture et confection d'EPI, de l'usine aux \u00e9tudiants."},"albums":["kenge-factory","kenge-students"],"videos":["1zI3tVvEWlYa6xF2QuKdqf3keFTrANHPT"],"collage":["1sYgzIjwfFeAlCnbllZZo4je1h1aDcRl2","1YikCQ1ezw5G1CgDLNFRGQ1Z2n0Xbc1er","1Hy9LXb-TogBPR8uweVgcWgmKrKPvFN9K"]}],"documents":[],"templates":[],"brand":{"pdf":"1qFNT5HbcTG-cnM_EL_HFMnSbvJtUrZWf","families":[{"key":"horizontal","label":{"en":"Horizontal","fr":"Horizontal"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1sUEuUNXitRaOgmVHSLKvF3pnSt4Fz6gE","png":"1P5b2JlrPtmWFIDtuWkzG13Rdo_vvx009","jpg":"1mbNTVnae28KzrslC0YZv3L8tRg7887aE"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1VnjT3pKkDe5S8fyDFfb0BHWGYi-UyWiJ","png":"1Xac_hIRq5jXDPJ5Oj4VNpLamicjpzGJ9","jpg":"1MzpVkKh5JKqYpGjTyHWpUTzawKM_J2rM"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1acso-5qeKzwnQOmrmL9m0YeP5_-h6tlh","png":"1FJq3ZlCBz6WZWTzPP5zoL1MNtqPaZ3vY","jpg":"1xPfzwJst9U8iON9gU3Nvn7AbK5JiAqkf"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1UDQOcbHPk25zHFdaQfEQCedXAmllNke_","png":"1J9E8czOK3EQ8IbfDjibCGNz2uLsFb83z","jpg":"1a0zjLLSO_Qn7DlUs-mKIyyfRIMrdFM2R"}]},{"key":"stacked","label":{"en":"Stacked","fr":"Vertical"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1rqpuq6dNotRys_OQRahrqcvVgEjmAjsb","png":"1s8fQmoOTdOF2U3ibi_MbUZ74i2Q9fxmw","jpg":"1JVzgrFinaNVEhrJn0Gna1NyuzJiSmYfW"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1imxCAS_9WFNPTV60d0UayJfiD8ltRMKa","png":"1URWjKUbA5LMkIo2A2dGB-mKxPWvJr8VU","jpg":"1yyUlNJfcocaYr2Wdgl7yCCrRQZuNARBp"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1Y8jr5nQqFJi_dBRNDXRRiiYsaRBb59Cw","png":"1_5oALW0dKaQYuOYt1UUD1bpsgjEmLBg3","jpg":"1BiIqS1hpGR3M7Z1vO5Q0CQ5_YCHQaDYJ"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1zv1YZ0TOa4qIJgk93l4edIK9a-bZXehZ","png":"1UCKsHivC94BhW0FHKEANYTNzD8kjKmfh","jpg":"1PSwCOJWVwhnQw7R2Y6CcvQSF9vL0NB7r"}]},{"key":"symbol","label":{"en":"Symbol","fr":"Symbole"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1Fi8nx1ZYwjzClauw0rrah0LSE0Viu1Od","png":"1jDTxjb5OUBwKUNJr0MNmUI9o7qvAjMZy","jpg":"12W5U_6mMI2zo7EP_LV-HImOJ2d11-Moe"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1fTMeunFBF1fFoVTIdL-VR0aPO20y_l-4","png":"1W1F-IZpD7lfAej4a598cOvmb4sHe9lGt","jpg":"1eBAhatW0-T1C6WZzKMGxiABnJMa4gdxi"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1JtKrCe5u-ecl8Io1FZtiDj9ZTuQ3xB4z","png":"1iZfASljJzbsQgxLKO07TnZl8yB5zBWnf","jpg":"1RINSRsDdKGXAMrVG1p7H7KKD8JDlQsVP"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1UaylA5ibN-p8Kbg1upt8PzC0f4F9lJCn","png":"1vpOPXPnfkp8jaXAinWo9c-0ZRQ_hcutT","jpg":"1YoFLoK8q9rvaavCbTcAekfzwWa2RgvTg"}]},{"key":"badge","label":{"en":"Badge","fr":"Badge"},"items":[{"label":{"en":"Orange on white","fr":"Orange sur blanc"},"svg":"1DlJCLe0YRP26eicSCeZpFafGRS-owziF","png":"1u4uZIZLdZbdOoLkxVKhJT7QUhDRjVYO3","jpg":"1FAv_n6y4czRCMOxpbTi0GKz4y5W3i3qm"},{"label":{"en":"Orange on black","fr":"Orange sur noir"},"svg":"1IHFnVgIg69puQQkKySoGY2_VQmnqvvPx","png":"19Sf0bDk9A85BgqUoYilO29wQoKQQ6KFL","jpg":"1fJt0h0bzraaVu2Y3oO3yVgOsn-BkRxl6"},{"label":{"en":"White on orange","fr":"Blanc sur orange"},"svg":"1FqhkQprwatS75FX_3SAng3AnqJlpmlWV","png":"1KteXZDwQm7HM7HqHdCT9ytIEeUOKgVYn","jpg":"1n4hvBXzzlSbShRdMSnJs37dIkcpHDbTU"},{"label":{"en":"Black on white","fr":"Noir sur blanc"},"svg":"1mpnoMv3_WMQPTeUmJBiK2alpNWU7ZRVj","png":null,"jpg":"1mXHl4WJ5msLn6JwjJAhx7fJkQCArbqRj"}]}]},"products":[],"directory":[],"procedures":[],"hero":"1Mky3T0mSxnOdvLkWR-tN3BnNc9v95Y7p","side":"1f5DT_3o9T7W_59X_dRdvVbuETDjEuLSg"};
 const T={
-en:{install:'Install app',backsite:'Back to css-drc.com',h1a:'Photos, videos and official files.',h1b:'All in one place.',heroP:'For partners, clients, press and staff. Everything here is free to view and download.',searchPh:'Search albums, videos, documents',kLatest:'Latest',hLatest:'Latest albums',kProjects:'Projects',hProjects:'Proof of work',pProjects:'Each project keeps its photos, videos and reports together. Ready for tenders.',kAlbums:'Albums',hAlbums:'All albums',kVideos:'Videos',hVideos:'Watch',kBrand:'Brand kit',hBrand:'Use our brand correctly',colours:'Colours',coloursP:'Orange and black. No grey.',getFont:'Get the font',kDocs:'Documents',hDocs:'Official files',kTpl:'Templates',hTpl:'Company templates',pTpl:'Always the latest version, with the current logo and legal details.',kStaff:'Staff',hStaff:'Products, contacts and procedures',hInstall:'Put CSS on your home screen',pInstall:'Opens like an app, full screen, no browser bar. Works on Android and iPhone.',android:'Tap Install app, then Install.',iphone:'In Safari: Share, then Add to Home Screen.',back:'All albums',more:'Load more',download:'Download',iosT:'Add to your home screen',ios1:'Open this page in Safari.',ios2:'Tap the Share button.',ios3:'Choose Add to Home Screen.',
-logoPack:'Full logo pack',dlPdf:'Download PDF',logoLib:'Logo library',lpFormat:'Layout',lpColour:'Colour',all:'All',photos:'photos',video:'video',videos:'videos',files:'files',open:'Open album',soon:'Coming soon',soonP:'This section is being prepared.',logo:'Logo files',products:'Product catalogue',directory:'Directory',procedures:'Procedures',noRes:'No results',albumL:'Album',videoL:'Video',projectL:'Project',pills:{latest:'Latest',projects:'Projects',albums:'Albums',videos:'Videos',brand:'Brand kit',documents:'Documents',templates:'Templates',staff:'Staff'}},
-fr:{install:"Installer l'app",backsite:'Retour sur css-drc.com',h1a:'Photos, vidéos et documents officiels.',h1b:'Tout au même endroit.',heroP:'Pour les partenaires, clients, médias et employés. Tout est consultable et téléchargeable.',searchPh:'Rechercher albums, vidéos, documents',kLatest:'Récent',hLatest:'Derniers albums',kProjects:'Projets',hProjects:'Nos réalisations',pProjects:'Chaque projet regroupe ses photos, vidéos et rapports. Prêt pour les appels d’offres.',kAlbums:'Albums',hAlbums:'Tous les albums',kVideos:'Vidéos',hVideos:'Regarder',kBrand:'Charte graphique',hBrand:'Bien utiliser notre marque',colours:'Couleurs',coloursP:'Orange et noir. Pas de gris.',getFont:'Obtenir la police',kDocs:'Documents',hDocs:'Documents officiels',kTpl:'Modèles',hTpl:"Modèles de l'entreprise",pTpl:'Toujours la dernière version, avec le logo et les mentions légales à jour.',kStaff:'Personnel',hStaff:'Produits, contacts et procédures',hInstall:"Mettez CSS sur votre écran d'accueil",pInstall:"S'ouvre comme une app, en plein écran. Fonctionne sur Android et iPhone.",android:"Touchez Installer l'app, puis Installer.",iphone:"Dans Safari : Partager, puis Sur l'écran d'accueil.",back:'Tous les albums',more:'Voir plus',download:'Télécharger',iosT:"Ajouter à l'écran d'accueil",ios1:'Ouvrez cette page dans Safari.',ios2:'Touchez le bouton Partager.',ios3:"Choisissez Sur l'écran d'accueil.",
-logoPack:'Pack logo complet',dlPdf:'Télécharger le PDF',logoLib:'Bibliothèque de logos',lpFormat:'Format',lpColour:'Couleur',all:'Tout',photos:'photos',video:'vidéo',videos:'vidéos',files:'fichiers',open:"Ouvrir l'album",soon:'Bientôt disponible',soonP:'Cette section est en préparation.',logo:'Fichiers du logo',products:'Catalogue produits',directory:'Annuaire',procedures:'Procédures',noRes:'Aucun résultat',albumL:'Album',videoL:'Vidéo',projectL:'Projet',pills:{latest:'Récent',projects:'Projets',albums:'Albums',videos:'Vidéos',brand:'Charte',documents:'Documents',templates:'Modèles',staff:'Personnel'}}};
-let L='en'; try{L=localStorage.getItem('css-lang')||(navigator.language||'').slice(0,2)==='fr'&&'fr'||'en';}catch(e){}
+en:{nAlbums:'Albums',nProjects:'Projects',nVideos:'Videos',nBrand:'Brand kit',nFiles:'Files',install:'Install app',heroChip:'CSS Media Centre',h1a:'Our work,',h1b:'in pictures.',heroP:'Photos, videos, logos and company files from Congo Supply & All Services, free to view and download.',searchPh:'Search an album, a project, a video',crumb:'Media Centre',kIntro:'What you will find',iA:'Every image of CSS,',iB:'ready to share with clients, partners and the press.',iP1:'From the KENGE workshop to our trucks on the road, this is where CSS keeps its visual memory. Browse by album, open any photo in full size and download the original.',iP2:'Need a logo for a document or a stand? The brand kit has every version, in every format.',checks:['Full size photos','Project albums','Videos','Logos in SVG, PNG, JPG'],sPhotos:'Photos',sAlbums:'Albums',sVideos:'Videos',sLogos:'Logo versions',marq:['Mining','Construction','Oil and Gas','PPE and Workwear','Logistics','Made in Congo'],kAlbums:'Albums',aA:'Browse',aB:'by album',aP:'Each album is a Drive folder. New photos appear here as soon as they are added.',kProjects:'Projects',pA:'Proof',pB:'of work',pP:'Photos, videos and figures grouped by project. Useful for tenders and client meetings.',moreProj:'More projects are on the way.',soon:'Coming soon',kVideos:'Videos',vA:'See it',vB:'in motion',watch:'Watch the video',kBrand:'Brand kit',bA:'Our brand,',bB:'used the right way',colours:'Colours',coloursP:'Orange and black. Never grey.',fontP:'Our typeface for every document.',logoPack:'Full logo pack',logoPackP:'Every version in one PDF.',dlPdf:'Download PDF',lpFormat:'Layout',lpColour:'Colour',kFiles:'Files',fA:'Documents',fB:'and templates',fP:'These sections are being filled. Check back soon.',soonItems:[['Official documents','Company profile, certifications and legal papers.'],['Templates','Letterhead, purchase order, delivery note and more.'],['Product catalogue','Spec sheets and certificates for every product.']],hInstall:'Keep CSS',hInstall2:'on your home screen.',pInstall:'Opens full screen like an app. On iPhone: Share, then Add to Home Screen.',back:'All albums',more:'Load more',download:'Download',photos:'photos',iosT:'Add to your home screen',ios1:'Open this page in Safari.',ios2:'Tap the Share button.',ios3:'Choose Add to Home Screen.',fAbout:'Congo Supply & All Services serves the mining, construction, and oil and gas sectors in the DRC.',fOffices:'Offices',fContact:'Contact',fExplore:'Explore',noRes:'No results',albumL:'Album',projectL:'Project',videoL:'Video',open:'Open',photosL:'Photos',videosL:'Video',albumsL:'Albums',desc:{'kenge-factory':'The workshop at work','kenge-students':'Trainees and visits','corporate-photos':'Team and offices','truck':'Our fleet on the road','css-building':'Our premises'}},
+fr:{nAlbums:'Albums',nProjects:'Projets',nVideos:'Vidéos',nBrand:'Charte',nFiles:'Fichiers',install:"Installer l'app",heroChip:'Médiathèque CSS',h1a:'Notre travail,',h1b:'en images.',heroP:'Photos, vidéos, logos et documents de Congo Supply & All Services, à consulter et télécharger librement.',searchPh:'Chercher un album, un projet, une vidéo',crumb:'Médiathèque',kIntro:'Ce que vous trouverez',iA:'Toutes les images de CSS,',iB:'prêtes à partager avec clients, partenaires et médias.',iP1:"De l'atelier KENGE à nos camions sur la route, c'est ici que CSS garde sa mémoire visuelle. Parcourez par album, ouvrez chaque photo en grand et téléchargez l'original.",iP2:"Besoin d'un logo pour un document ou un stand ? La charte contient toutes les versions, dans tous les formats.",checks:['Photos en pleine résolution','Albums par projet','Vidéos','Logos en SVG, PNG, JPG'],sPhotos:'Photos',sAlbums:'Albums',sVideos:'Vidéos',sLogos:'Versions du logo',marq:['Mines','Construction','Pétrole et gaz','EPI et tenues de travail','Logistique','Fabriqué au Congo'],kAlbums:'Albums',aA:'Parcourir',aB:'par album',aP:'Chaque album est un dossier Drive. Les nouvelles photos apparaissent ici dès leur ajout.',kProjects:'Projets',pA:'Nos',pB:'réalisations',pP:"Photos, vidéos et chiffres regroupés par projet. Utile pour les appels d'offres et les rendez-vous clients.",moreProj:'D’autres projets arrivent.',soon:'Bientôt',kVideos:'Vidéos',vA:'En',vB:'mouvement',watch:'Voir la vidéo',kBrand:'Charte',bA:'Notre marque,',bB:'bien utilisée',colours:'Couleurs',coloursP:'Orange et noir. Jamais de gris.',fontP:'Notre police pour tous les documents.',logoPack:'Pack logo complet',logoPackP:'Toutes les versions dans un PDF.',dlPdf:'Télécharger le PDF',lpFormat:'Format',lpColour:'Couleur',kFiles:'Fichiers',fA:'Documents',fB:'et modèles',fP:'Ces sections sont en préparation. Revenez bientôt.',soonItems:[['Documents officiels','Company profile, certifications et documents légaux.'],['Modèles','Papier à en-tête, bon de commande, bon de livraison…'],['Catalogue produits','Fiches techniques et certificats de chaque produit.']],hInstall:'Gardez CSS',hInstall2:"sur votre écran d'accueil.",pInstall:"S'ouvre en plein écran comme une app. Sur iPhone : Partager, puis Sur l'écran d'accueil.",back:'Tous les albums',more:'Voir plus',download:'Télécharger',photos:'photos',iosT:"Ajouter à l'écran d'accueil",ios1:'Ouvrez cette page dans Safari.',ios2:'Touchez le bouton Partager.',ios3:"Choisissez Sur l'écran d'accueil.",fAbout:"Congo Supply & All Services accompagne les secteurs miniers, de la construction et du pétrole et gaz en RDC.",fOffices:'Bureaux',fContact:'Contact',fExplore:'Explorer',noRes:'Aucun résultat',albumL:'Album',projectL:'Projet',videoL:'Vidéo',open:'Ouvrir',photosL:'Photos',videosL:'Vidéo',albumsL:'Albums',desc:{'kenge-factory':"L'atelier au travail",'kenge-students':'Stagiaires et visites','corporate-photos':'Équipe et bureaux','truck':'Notre flotte sur la route','css-building':'Nos locaux'}}};
+let L='en';try{L=localStorage.getItem('css-lang')||((navigator.language||'').slice(0,2)==='fr'?'fr':'en');}catch(e){}
 const t=k=>T[L][k]??T.en[k];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -304,29 +350,38 @@ const th=(id,w)=>`https://lh3.googleusercontent.com/d/${id}=w${w}`;
 const th2=(id,w)=>`https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
 const dl=id=>`https://drive.google.com/uc?export=download&id=${id}`;
 const A=Object.fromEntries(DATA.albums.map(a=>[a.slug,a]));
-function img(id,w,alt){return `<img src="${th(id,w)}" alt="${esc(alt||'')}" loading="lazy" onload="this.classList.add('ok')" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${th2(id,w)}'}">`;}
-const count=(n,k)=>n+' '+t(k);
-function soon(title){return `<div class="soon"><b>${esc(title||t('soon'))}</b><span>${title?t('soon'):t('soonP')}</span></div>`;}
+const img=(id,w,alt,eager)=>`<img src="${th(id,w)}" alt="${esc(alt||'')}" ${eager?'':'loading="lazy"'} onload="this.classList.add('ok')" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${th2(id,w)}'}">`;
+const ARR='<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+const CAM='<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l2-3h4l2 3"/></svg>';
+const PLAY='<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
+const TOTAL=DATA.albums.reduce((n,a)=>n+a.ids.length,0);
 
 function render(){
  document.documentElement.lang=L;
- document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
+ document.querySelectorAll('[data-t]').forEach(e=>{const v=t(e.dataset.t);if(typeof v==='string')e.textContent=v;});
  $('q').placeholder=t('searchPh');
  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
- $('pills').innerHTML=Object.entries(t('pills')).map(([k,v],i)=>`<a class="pill${i?'':' on'}" href="#${k}">${v}</a>`).join('');
- const al=DATA.albums;
- const f=al[0];
- $('featured').innerHTML=f?`<a class="feat" href="#album/${f.slug}"><div class="ph">${img(f.ids[0],1400,f.title)}</div><div class="tx"><span class="k">${esc(f.group)}</span><h3>${esc(f.title)}</h3><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="tag tag-o">${count(f.ids.length,'photos')}</span></div><span class="btn btn-k" style="align-self:flex-start">${t('open')}</span></div></a>`:'';
- $('minis').innerHTML=al.slice(1,4).map(a=>`<a class="mini" href="#album/${a.slug}"><div class="ph">${img(a.ids[0],300,a.title)}</div><div><small>${esc(a.group)}</small><br><b>${esc(a.title)}</b></div></a>`).join('');
- $('projGrid').innerHTML=DATA.projects.map(p=>{const ph=p.albums.reduce((n,s)=>n+(A[s]?A[s].ids.length:0),0);const c=A[p.albums[0]];return `<a class="card pr" href="#album/${p.albums[0]}"><div class="ph">${c?img(c.ids[0],900,p.title):''}</div><div class="tx"><span class="tag tag-o" style="align-self:flex-start">${esc(p.tag)}</span><h3>${esc(p.title)}</h3><p style="font-size:15px;line-height:1.6">${esc(p.desc[L]||p.desc.en)}</p><div class="st"><span>${count(ph,'photos')}</span><span>${count(p.videos.length,p.videos.length>1?'videos':'video')}</span><span>${count(p.albums.length,'albumL').toLowerCase()}s</span></div></div></a>`}).join('')+soon(L==='fr'?'Autres projets':'More projects');
- $('albGrid').innerHTML=al.map(a=>`<a class="card al" href="#album/${a.slug}" style="border:0"><div class="ph">${img(a.ids[0],700,a.title)}</div><div class="tx"><b>${esc(a.title)}</b><span>${count(a.ids.length,'photos')}</span></div></a>`).join('');
- $('vidGrid').innerHTML=DATA.videos.length?DATA.videos.map((v,i)=>`<a class="vd" href="#" data-v="${i}"><div class="ph">${img(v.id,900,v.title)}<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><b>${esc(v.title)}</b></a>`).join(''):soon();
- $('vidGrid').querySelectorAll('[data-v]').forEach(a=>a.onclick=e=>{e.preventDefault();openLB(DATA.videos.map(v=>'v:'+v.id),+a.dataset.v,t('kVideos'));});
- const B=DATA.brand; $('pdfBtn').href=dl(B.pdf);
+ $('brandLogo').src=th(DATA.brand.families[0].items[0].png,600);
+ $('heroPh').innerHTML=img(DATA.hero,2000,'CSS',true);
+ $('checks').innerHTML=t('checks').map(c=>`<div><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>${esc(c)}</div>`).join('');
+ const logos=DATA.brand.families.reduce((n,f)=>n+f.items.length,0);
+ $('stats').innerHTML=[[TOTAL,'sPhotos'],[DATA.albums.length,'sAlbums'],[DATA.videos.length,'sVideos'],[logos,'sLogos']].map(([n,k])=>`<div><b>${n}${n>99?'+':''}</b><span>${t(k)}</span></div>`).join('');
+ const mq=t('marq').map(m=>`<span>${esc(m)}<svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg></span>`).join('');
+ $('marq').innerHTML=mq+mq;
+ $('albGrid').className='cards'+(DATA.albums.length%3===2?' r2':'');$('albGrid').innerHTML=DATA.albums.map((a,i)=>`<a class="alc${i===1?' hl':''}" href="#album/${a.slug}"><div class="top"><div><h3>${esc(a.title)}</h3><p>${esc((t('desc')||{})[a.slug]||a.group)} · ${a.ids.length} ${t('photos')}</p></div><span class="arr">${ARR}</span></div><div class="ph">${img(a.cover,700,a.title)}<span class="badge">${CAM}</span></div></a>`).join('');
+ const p=DATA.projects[0];
+ if(p){const ph=p.albums.reduce((n,s)=>n+(A[s]?A[s].ids.length:0),0);
+ $('projBox').innerHTML=`<div class="proj"><div class="col3">${p.collage.map(id=>`<a class="ph" href="#album/${p.albums[0]}">${img(id,900,p.title)}</a>`).join('')}</div>
+ <div class="pcard"><div><span class="chip" style="color:var(--k)"><i style="background:var(--k)"><svg viewBox="0 0 10 10" style="fill:var(--o)"><path d="M1 9V5h2v4zm3 0V3h2v6zm3 0V1h2v8z"/></svg></i>${esc(p.tag)}</span><h3 style="margin-top:16px">KENGE <em>Workwear</em></h3><p style="margin-top:14px;font-size:16px;line-height:1.65">${esc(p.desc[L]||p.desc.en)}</p></div>
+ <div class="pnum"><div><b>${ph}</b><span>${t('photosL')}</span></div><div><b>${p.videos.length}</b><span>${t('videosL')}</span></div><div><b>${p.albums.length}</b><span>${t('albumsL')}</span></div></div>
+ <div style="display:flex;gap:10px;flex-wrap:wrap">${p.albums.map(s=>`<a class="btn btn-k" href="#album/${s}">${esc(A[s].title)}</a>`).join('')}</div></div></div>`;}
+ const v=DATA.videos[0];
+ $('vidHero').innerHTML=v?`<div class="ph">${img(v.id,1800,v.title)}</div><div class="in"><span class="play">${PLAY}</span><h3>${esc(v.title)}</h3><span class="btn btn-w">${t('watch')}</span></div>`:'';
+ $('vidHero').onclick=e=>{e.preventDefault();if(v)openLB(DATA.videos.map(x=>'v:'+x.id),0,t('kVideos'));};
+ $('pdfBtn').href=dl(DATA.brand.pdf);
+ const ic=['<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/>','<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>','<path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/>'];
+ $('soonGrid').innerHTML=t('soonItems').map((s,i)=>`<div class="sc"><span class="ic"><svg viewBox="0 0 24 24">${ic[i]}</svg></span><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p><small>${t('soon')}</small></div>`).join('');
  renderLogo();
- $('docList').innerHTML=DATA.documents.length?'':soon();
- $('tplList').innerHTML=DATA.templates.length?'':soon();
- $('staffGrid').innerHTML=soon(t('products'))+soon(t('directory'))+soon(t('procedures'));
 }
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem('css-lang',L)}catch(e){}render();route();});
 
@@ -335,18 +390,15 @@ let LF=0,LV=0;
 const SW=[['#FFFFFF','#F1A849'],['#0B0B0B','#F1A849'],['#F1A849','#FFFFFF'],['#FFFFFF','#0B0B0B']];
 function renderLogo(){const B=DATA.brand,f=B.families[LF],it=f.items[LV];
  $('logoLib').innerHTML=`<div class="lp"><div class="lp-prev" style="background:${SW[LV][0]}">${img(it.jpg,1200,f.label.en+' '+it.label.en)}</div>
- <div class="lp-side"><h3 style="font-size:24px;font-weight:800">${t('logoLib')}</h3>
- <div><div class="lp-l">${t('lpFormat')}</div><div class="seg">${B.families.map((x,i)=>`<button class="${i===LF?'on':''}" data-f="${i}">${esc(x.label[L])}</button>`).join('')}</div></div>
- <div><div class="lp-l">${t('lpColour')}: <b>${esc(it.label[L])}</b></div><div class="sws">${SW.map((c,i)=>`<button class="swb${i===LV?' on':''}" data-v="${i}" aria-label="${esc(f.items[i].label[L])}" style="background:linear-gradient(135deg,${c[0]} 50%,${c[1]} 50%)"></button>`).join('')}</div></div>
- <div><div class="lp-l">${t('download')}</div><div class="fmt" style="justify-content:flex-start">${it.svg?`<a href="${dl(it.svg)}" target="_blank" rel="noopener">SVG</a>`:''}${it.png?`<a href="${dl(it.png)}" target="_blank" rel="noopener">PNG</a>`:''}${it.jpg?`<a href="${dl(it.jpg)}" target="_blank" rel="noopener">JPG</a>`:''}</div></div>
- </div></div>`;
+ <div class="lp-side"><div><div class="lp-l">${t('lpFormat')}</div><div class="seg">${B.families.map((x,i)=>`<button class="${i===LF?'on':''}" data-f="${i}">${esc(x.label[L])}</button>`).join('')}</div></div>
+ <div><div class="lp-l">${t('lpColour')}</div><div class="sws">${SW.map((c,i)=>`<button class="swb${i===LV?' on':''}" data-v="${i}" aria-label="${esc(f.items[i].label[L])}" title="${esc(f.items[i].label[L])}" style="background:linear-gradient(135deg,${c[0]} 50%,${c[1]} 50%)"></button>`).join('')}</div></div>
+ <div><div class="lp-l">${t('download')}</div><div class="fmt">${it.svg?`<a href="${dl(it.svg)}" target="_blank" rel="noopener">SVG</a>`:''}${it.png?`<a href="${dl(it.png)}" target="_blank" rel="noopener">PNG</a>`:''}${it.jpg?`<a href="${dl(it.jpg)}" target="_blank" rel="noopener">JPG</a>`:''}</div></div></div></div>`;
  $('logoLib').querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{LF=+b.dataset.f;renderLogo()});
  $('logoLib').querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{LV=+b.dataset.v;renderLogo()});}
 
 /* search */
 $('q').oninput=()=>{const q=$('q').value.trim().toLowerCase();const r=$('results');if(!q){r.style.display='none';return;}
- const items=[...DATA.albums.map(a=>({h:'#album/'+a.slug,n:a.title,k:t('albumL'),s:a.group})),...DATA.projects.map(p=>({h:'#album/'+p.albums[0],n:p.title,k:t('projectL'),s:p.tag})),...DATA.videos.map(v=>({h:'#videos',n:v.title,k:t('videoL'),s:''}))]
-  .filter(i=>(i.n+' '+i.s).toLowerCase().includes(q));
+ const items=[...DATA.albums.map(a=>({h:'#album/'+a.slug,n:a.title,k:t('albumL'),s:a.group+' '+((t('desc')||{})[a.slug]||'')})),...DATA.projects.map(p=>({h:'#projects',n:p.title,k:t('projectL'),s:p.tag})),...DATA.videos.map(v=>({h:'#videos',n:v.title,k:t('videoL'),s:''}))].filter(i=>(i.n+' '+i.s).toLowerCase().includes(q));
  r.innerHTML=items.length?items.map(i=>`<a href="${i.h}">${esc(i.n)}<span>${esc(i.k)}</span></a>`).join(''):`<a>${t('noRes')}</a>`;r.style.display='block';};
 $('results').onclick=()=>{$('results').style.display='none';$('q').value='';};
 
@@ -355,9 +407,9 @@ const PAGE=48;let cur=null,ids=[],shown=0,cols=[];
 function ncols(){const w=innerWidth;return w<520?2:w<900?3:w<1400?4:5;}
 function showAlbum(slug){const a=A[slug];if(!a){location.hash='#home';return;}
  cur=a;ids=a.ids;$('homeView').style.display='none';$('albumView').style.display='block';
- $('avGroup').textContent=a.group;$('avTitle').textContent=a.title;$('avCount').textContent=count(ids.length,'photos');
+ $('avPh').innerHTML=img(a.cover,2000,a.title,true);$('avGroup').textContent=a.group;$('avTitle').textContent=a.title;$('avCount').textContent=ids.length+' '+t('photos');
  const sib=DATA.albums.filter(x=>x.group===a.group);
- $('avTabs').innerHTML=sib.length>1?sib.map(x=>`<a href="#album/${x.slug}" class="${x.slug===slug?'on':''}">${esc(x.title)}</a>`).join(''):'';
+ $('avTabs').innerHTML=(sib.length>1?sib:[a]).map(x=>`<a href="#album/${x.slug}" class="${x.slug===slug?'on':''}">${esc(x.title)}</a>`).join('');
  build();scrollTo(0,0);}
 function build(){const m=$('mason');m.innerHTML='';cols=[];shown=0;const n=ncols();for(let i=0;i<n;i++){const d=document.createElement('div');d.className='col';m.appendChild(d);cols.push(d);}page();}
 function page(){const end=Math.min(ids.length,shown+PAGE);for(let i=shown;i<end;i++){const id=ids[i];const a=document.createElement('a');a.className='tile';a.href='#';
@@ -390,8 +442,8 @@ let tx=null;$('lb').addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{
 /* routing */
 function route(){const h=location.hash.slice(1);
  if(h.startsWith('album/')){showAlbum(h.slice(6));return;}
- const legacy={'kenge-factory':1,'kenge-students':1,'corporate-photos':1,'css-truck':'truck','css-building':1,'highlights':'corporate-photos','shooting-sa':'corporate-photos','kenge-october-2025':'kenge-factory'};
- if(legacy[h]){location.replace('#album/'+(legacy[h]===1?h:legacy[h]));return;}
+ const legacy={'kenge-factory':1,'kenge-students':1,'corporate-photos':1,'css-truck':'truck','css-building':1,'highlights':'corporate-photos','shooting-sa':'corporate-photos','kenge-october-2025':'kenge-factory','kenge-video':'#videos'};
+ if(legacy[h]){location.replace(legacy[h]==='#videos'?'#videos':'#album/'+(legacy[h]===1?h:legacy[h]));return;}
  cur=null;$('albumView').style.display='none';$('homeView').style.display='block';
  if(h&&h!=='home'){const el=document.getElementById(h);if(el)setTimeout(()=>el.scrollIntoView(),0);}else scrollTo(0,0);}
 addEventListener('hashchange',route);
@@ -404,7 +456,6 @@ function doInstall(){if(deferred){deferred.prompt();deferred=null;return;}$('ios
 $('installBtn').onclick=doInstall;$('installBtn2').onclick=doInstall;$('iosOk').onclick=()=>$('iosModal').classList.remove('open');
 if(standalone){$('installBtn').style.display='none';$('install').style.display='none';}
 if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
-
 render();route();
 </script>
 </body>
