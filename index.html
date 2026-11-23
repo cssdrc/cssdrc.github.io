@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CSS Media Centre</title>
 <meta name="description" content="Congo Supply & All Services media centre: photos, videos, documents and templates.">
-<meta name="theme-color" content="#0B0B0B">
+<meta name="theme-color" content="#000000">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--o:#F1A849;--o2:#C97F1F;--k:#0B0B0B;--w:#FFFFFF;--t:#FDF4E7;--t2:#F7E2C2;--gap:10px}
+:root{--o:#F1A849;--o2:#C97F1F;--k:#000000;--w:#FFFFFF;--t:#FDF4E7;--t2:#F7E2C2;--gap:10px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Urbanist,Helvetica,Arial,sans-serif;color:var(--k);background:var(--w);-webkit-font-smoothing:antialiased}
@@ -147,7 +147,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 .tile.dead{display:none}
 .more{display:flex;margin:0 auto 70px}
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(8,8,8,.97);display:none;color:#fff;user-select:none}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.97);display:none;color:#fff;user-select:none}
 .lb.open{display:block}
 .lb-stage{position:absolute;inset:64px 72px;display:flex;align-items:center;justify-content:center}
 .lb-stage img{max-width:100%;max-height:100%;object-fit:contain;opacity:0;transition:opacity .3s}
@@ -199,7 +199,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 <div class="wrap">
 <h1><span data-t="h1a">Photos, videos and official files.</span><br><span data-t="h1b">All in one place.</span></h1>
 <p data-t="heroP">For partners, clients, press and staff. Everything here is free to view and download.</p>
-<label class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" autocomplete="off" aria-label="Search" data-tp="searchPh"></label>
+<label class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" autocomplete="off" aria-label="Search" data-tp="searchPh"></label>
 <div class="results" id="results"></div>
 <nav class="pills" id="pills" aria-label="Sections"></nav>
 </div>
@@ -229,9 +229,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 <section class="s" id="brand"><div class="wrap">
 <div class="head"><div class="k" data-t="kBrand">Brand kit</div><h2 data-t="hBrand">Use our brand correctly</h2></div>
 <div class="grid g3">
-<div class="card bk"><div class="sw"><div style="background:#F1A849">#F1A849</div><div style="background:#0B0B0B;color:#fff">#0B0B0B</div><div style="background:#fff">#FFFFFF</div></div><div class="tx"><b data-t="colours">Colours</b><span data-t="coloursP">Orange and black. No grey.</span></div></div>
+<div class="card bk"><div class="sw"><div style="background:#F1A849">#F1A849</div><div style="background:#000000;color:#fff">#000000</div><div style="background:#fff">#FFFFFF</div></div><div class="tx"><b data-t="colours">Colours</b><span data-t="coloursP">Orange and black. No grey.</span></div></div>
 <div class="card bk"><div class="sw" style="grid-template-columns:1fr;align-items:center;justify-items:center;font-size:48px;font-weight:800">Aa</div><div class="tx"><b>Urbanist</b><a class="btn btn-o" href="https://fonts.google.com/specimen/Urbanist" target="_blank" rel="noopener" style="align-self:flex-start" data-t="getFont">Get the font</a></div></div>
-<div class="card bk"><div class="sw" style="grid-template-columns:1fr;background:#0B0B0B"><img src="mark.png" alt="" style="width:96px;height:96px;margin:auto;border-radius:12px"></div><div class="tx"><b data-t="logoPack">Full logo pack</b><a class="btn btn-o" id="pdfBtn" target="_blank" rel="noopener" style="align-self:flex-start" data-t="dlPdf">Download PDF</a></div></div>
+<div class="card bk"><div class="sw" style="grid-template-columns:1fr;background:#000000"><img src="mark.png" alt="" style="width:96px;height:96px;margin:auto;border-radius:12px"></div><div class="tx"><b data-t="logoPack">Full logo pack</b><a class="btn btn-o" id="pdfBtn" target="_blank" rel="noopener" style="align-self:flex-start" data-t="dlPdf">Download PDF</a></div></div>
 </div>
 <div id="logoLib" style="margin-top:24px"></div>
 </div></section>
@@ -338,7 +338,7 @@ document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{L=b.dataset.
 
 /* logo picker */
 let LF=0,LV=0;
-const SW=[['#FFFFFF','#F1A849'],['#0B0B0B','#F1A849'],['#F1A849','#FFFFFF'],['#FFFFFF','#0B0B0B']];
+const SW=[['#FFFFFF','#F1A849'],['#000000','#F1A849'],['#F1A849','#FFFFFF'],['#FFFFFF','#000000']];
 function renderLogo(){const B=DATA.brand,f=B.families[LF],it=f.items[LV];
  $('logoLib').innerHTML=`<div class="lp"><div class="lp-prev" style="background:${SW[LV][0]}">${img(it.jpg,1200,f.label.en+' '+it.label.en)}</div>
  <div class="lp-side"><h3 style="font-size:24px;font-weight:800">${t('logoLib')}</h3>
