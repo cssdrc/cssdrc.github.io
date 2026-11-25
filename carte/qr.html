@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>QR codes | CSS</title>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--or:#F1A849;--noir:#000;--fond:#F6F6F6;--doux:#6B6B6B}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Urbanist',system-ui,sans-serif;background:var(--fond);color:var(--noir)}
+  header{background:var(--noir);color:#fff;text-align:center;padding:34px 20px 30px;border-bottom:4px solid var(--or)}
+  header h1{font-size:26px;font-weight:800;letter-spacing:.5px}
+  header h1 span{color:var(--or)}
+  header p{margin-top:6px;color:rgba(255,255,255,.6);font-size:14px}
+  .grille{max-width:1100px;margin:0 auto;padding:32px 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+  .fiche{background:#fff;border-radius:20px;padding:24px 22px;text-align:center;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+  .qr{width:180px;height:180px;margin:0 auto}
+  .qr svg{width:100%;height:100%;display:block}
+  .fiche h2{margin-top:16px;font-size:17px;font-weight:800}
+  .fiche .poste{font-size:12px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1.4px;margin-top:4px}
+  .fiche a.lien{display:block;margin-top:10px;font-size:12px;color:var(--doux);word-break:break-all;text-decoration:none}
+  .dl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:16px}
+  .dl button{height:40px;border-radius:10px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;border:2px solid var(--noir);background:#fff}
+  .dl button.png{background:var(--noir);color:#fff}
+</style>
+</head>
+<body>
+<header><h1>QR codes <span>CSS</span></h1><p>Un QR code par carte. PNG pour l'écran, SVG pour l'imprimeur.</p></header>
+<div class="grille" id="grille"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="equipe.js"></script>
+<script>
+const base = ENTREPRISE.adresseCartes.replace(/\/?$/, '/');
+const lien = p => base + '?p=' + encodeURIComponent(p.id);
+
+function matrice(texte){
+  const q = qrcode(0, 'Q'); q.addData(texte); q.make();
+  const n = q.getModuleCount(), m = [];
+  for (let r = 0; r < n; r++){ m.push([]); for (let c = 0; c < n; c++) m[r].push(q.isDark(r,c)); }
+  return m;
+}
+function svg(m, marge = 4){
+  const n = m.length, t = n + marge * 2; let d = '';
+  m.forEach((row, r) => row.forEach((on, c) => { if (on) d += `M${c+marge} ${r+marge}h1v1h-1z`; }));
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${t} ${t}" shape-rendering="crispEdges"><rect width="${t}" height="${t}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;
+}
+function png(m, nom, taille = 1600, marge = 4){
+  const n = m.length, t = n + marge * 2, s = Math.floor(taille / t);
+  const cv = document.createElement('canvas'); cv.width = cv.height = s * t;
+  const x = cv.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0,0,cv.width,cv.height); x.fillStyle = '#000';
+  m.forEach((row, r) => row.forEach((on, c) => { if (on) x.fillRect((c+marge)*s, (r+marge)*s, s, s); }));
+  cv.toBlob(b => telecharger(b, nom + '.png'), 'image/png');
+}
+function telecharger(blob, nom){
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nom;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+
+const g = document.getElementById('grille');
+EQUIPE.forEach(p => {
+  const url = lien(p), m = matrice(url), s = svg(m);
+  const f = document.createElement('div'); f.className = 'fiche';
+  f.innerHTML = `<div class="qr">${s}</div><h2></h2><div class="poste"></div><a class="lien" target="_blank"></a>
+    <div class="dl"><button class="png">PNG</button><button class="svg">SVG</button></div>`;
+  f.querySelector('h2').textContent = p.nom;
+  f.querySelector('.poste').textContent = p.poste;
+  const a = f.querySelector('.lien'); a.href = url; a.textContent = url.replace(/^https?:\/\//,'');
+  f.querySelector('.png').onclick = () => png(m, 'QR-CSS-' + p.id);
+  f.querySelector('.svg').onclick = () => telecharger(new Blob([s], {type:'image/svg+xml'}), 'QR-CSS-' + p.id + '.svg');
+  g.appendChild(f);
+});
+</script>
+</body>
+</html>
