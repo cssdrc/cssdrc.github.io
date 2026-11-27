@@ -117,6 +117,7 @@ if (!P) {
 } else {
   document.title = P.nom + ' | ' + E.sigle;
   const tel = (P.telephone||'').replace(/[^\d+]/g,'');
+  const tel2 = (P.telephone2||'').replace(/[^\d+]/g,'');
   const act = (ok, href, ic, txt, ext) => `<a class="action${ok?'':' off'}" href="${ok?esc(href):'#'}"${ext?' target="_blank" rel="noopener"':''}><span class="ic">${ic}</span>${txt}</a>`;
   const ligne = (ok, href, ic, label, val) => !ok ? '' : `<a class="info" ${href?`href="${esc(href)}" target="_blank" rel="noopener"`:''}><span class="ic">${ic}</span><span><small>${label}</small><b>${esc(val)}</b></span></a>`;
 
@@ -139,6 +140,7 @@ if (!P) {
     </div>
     <div class="infos">
       ${ligne(P.telephone, 'tel:'+tel, I.tel, 'Téléphone', P.telephone)}
+      ${ligne(P.telephone2, 'tel:'+tel2, I.tel, 'Téléphone 2', P.telephone2)}
       ${ligne(P.email, 'mailto:'+P.email, I.mail, 'Email', P.email)}
       ${ligne(E.siege, E.carte, I.home, 'Siège social', E.siege)}
     </div>
@@ -151,6 +153,7 @@ if (!P) {
       'N:'+v(P.nom)+';;;;','FN:'+v(P.nom),
       'ORG:'+v(E.nom),'TITLE:'+v(P.poste),
       tel ? 'TEL;TYPE=CELL,VOICE:'+tel : '',
+      tel2 ? 'TEL;TYPE=CELL,VOICE:'+tel2 : '',
       E.telephone ? 'TEL;TYPE=WORK,VOICE:'+E.telephone.replace(/[^\d+]/g,'') : '',
       P.email ? 'EMAIL;TYPE=WORK:'+P.email : '',
       'URL:'+E.site,

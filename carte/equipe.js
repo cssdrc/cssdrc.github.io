@@ -11,7 +11,7 @@ const ENTREPRISE = {
   siteAffiche: "www.css-drc.com",
   email: "info@css-drc.com",
   telephone: "+243 896 969 175",
-  siege: "Immeuble Future Tower, Bd du 30 Juin, Gombe, Kinshasa",
+  siege: "602, 6ème niveau, Immeuble Future Tower, Bd du 30 Juin, Gombe, Kinshasa",
   carte: "https://maps.google.com/?q=Future+Tower+Boulevard+du+30+Juin+Gombe+Kinshasa",
   logo: "logo-horizontal.svg",                       // logo horizontal blanc, fond transparent
   adresseCartes: "https://cssdrc.github.io/carte/"   // adresse ou la plateforme est en ligne
@@ -32,13 +32,14 @@ const EQUIPE = [
     photo: ""
   },
   {
-    id: "exemple",
-    nom: "Prénom Nom",
-    poste: "Responsable Logistique",
-    bureau: "Lubumbashi, RDC",
-    telephone: "+243 000 000 000",
-    whatsapp: "243000000000",
-    email: "info@css-drc.com",
-    photo: ""
+    id: "serge",
+    nom: "Serge Mudogo Lwanga",
+    poste: "Directeur Gérant",
+    bureau: "Kinshasa, RDC",
+    telephone: "+243 896 969 175",
+    telephone2: "+27 68 815 7465",
+    whatsapp: "243896969175",
+    email: "sergemudogo@css-drc.com",
+    photo: "photos/serge.jpg"
   }
 ];
