@@ -41,5 +41,15 @@ const EQUIPE = [
     whatsapp: "243896969175",
     email: "sergemudogo@css-drc.com",
     photo: "photos/serge.jpg"
+  },
+  {
+    id: "jobed",
+    nom: "Jobed Buhumu Kalongu",
+    poste: "Assistant Principal du DG",
+    bureau: "Kinshasa, RDC",
+    telephone: "+243 996 793 994",
+    whatsapp: "243996793994",
+    email: "jobedkalongu@css-drc.com",
+    photo: "photos/jobed.jpg"
   }
 ];
