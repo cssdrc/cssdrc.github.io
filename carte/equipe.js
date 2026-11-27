@@ -22,16 +22,6 @@ const ENTREPRISE = {
 // whatsapp : numero sans + ni espaces. Laisser "" pour masquer un champ.
 const EQUIPE = [
   {
-    id: "baampire",
-    nom: "Balibuno Ampire Baampire",
-    poste: "Brand Designer",
-    bureau: "Kampala, Ouganda",
-    telephone: "+243 896 969 175",
-    whatsapp: "243896969175",
-    email: "info@css-drc.com",
-    photo: ""
-  },
-  {
     id: "serge",
     nom: "Serge Mudogo Lwanga",
     poste: "Directeur Gérant",
