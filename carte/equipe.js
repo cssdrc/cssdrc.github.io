@@ -50,6 +50,7 @@ const EQUIPE = [
     adresse: "8 Homestead Rd, Oriel, Bedfordview, Johannesburg",
     telephone: "+27 60 468 4373",
     telephone2: "+256 766 524 589",
+    telephone3: "+255 761 000 219",
     whatsapp: "27604684373",
     email: "henrimukulu@css-drc.com",
     photo: "photos/henri.jpg"
