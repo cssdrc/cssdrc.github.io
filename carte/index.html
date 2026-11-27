@@ -142,6 +142,7 @@ if (!P) {
       ${ligne(P.telephone, 'tel:'+tel, I.tel, 'Téléphone', P.telephone)}
       ${ligne(P.telephone2, 'tel:'+tel2, I.tel, 'Téléphone 2', P.telephone2)}
       ${ligne(P.email, 'mailto:'+P.email, I.mail, 'Email', P.email)}
+      ${ligne(P.adresse, 'https://maps.google.com/?q='+encodeURIComponent(P.adresse||''), I.pin, 'Bureau', P.adresse)}
       ${ligne(E.siege, E.carte, I.home, 'Siège social', E.siege)}
     </div>
     <footer class="pied"><div class="barre"></div><b>${esc(E.nom)} ${esc(E.forme)}</b><a href="${esc(E.site)}" target="_blank" rel="noopener">${esc(E.siteAffiche)}</a></footer>`;
@@ -157,7 +158,7 @@ if (!P) {
       E.telephone ? 'TEL;TYPE=WORK,VOICE:'+E.telephone.replace(/[^\d+]/g,'') : '',
       P.email ? 'EMAIL;TYPE=WORK:'+P.email : '',
       'URL:'+E.site,
-      'ADR;TYPE=WORK:;;'+v(E.siege)+';;;;',
+      'ADR;TYPE=WORK:;;'+v(P.adresse||E.siege)+';;;;',
       'NOTE:'+v('Bureau : '+(P.bureau||'')),
       'END:VCARD'].filter(Boolean).join('\r\n');
     const blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});

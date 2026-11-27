@@ -51,5 +51,17 @@ const EQUIPE = [
     whatsapp: "243996793994",
     email: "jobedkalongu@css-drc.com",
     photo: "photos/jobed.jpg"
+  },
+  {
+    id: "henri",
+    nom: "Henri Mukulu",
+    poste: "Responsable Logistique",
+    bureau: "Johannesburg, Afrique du Sud",
+    adresse: "8 Homestead Rd, Oriel, Bedfordview, Johannesburg",
+    telephone: "+27 60 468 4373",
+    telephone2: "+256 766 524 589",
+    whatsapp: "27604684373",
+    email: "henrimukulu@css-drc.com",
+    photo: "photos/henri.jpg"
   }
 ];
